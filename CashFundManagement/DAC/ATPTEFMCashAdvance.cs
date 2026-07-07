@@ -867,6 +867,17 @@ namespace CashFundManagement.DAC
         public abstract class hasBalance : PX.Data.BQL.BqlBool.Field<hasBalance> { }
         #endregion
 
+        #region IsReady
+        /// <summary>
+        /// Indicates whether the cash advance record is ready for the next processing step.
+        /// This is an unbound field that is typically calculated or set in business logic.
+        /// </summary>
+        [PXBool]
+        [PXUIField(DisplayName = messages.IsReady)]
+        public virtual bool? IsReady { get; set; }
+        public abstract class isReady : PX.Data.BQL.BqlBool.Field<isReady> { }
+        #endregion
+
         #endregion
     }
 }

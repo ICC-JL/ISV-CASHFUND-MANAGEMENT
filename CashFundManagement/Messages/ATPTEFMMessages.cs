@@ -260,6 +260,7 @@ namespace CashFundManagement.Messages
         public const string Refund = "Refund";
         public const string DescCharExceeds = "Cash advance Description field must not be greater than 194 characters long.";
         public const string CAPrepaymentBillDesc = "Cash Advance Request {0} {1}";
+        public const string IsReady = "Ready";
 
         //RLCashAdvanceReceiptDetail 
         public const string RefNbr = "Reference Nbr";
