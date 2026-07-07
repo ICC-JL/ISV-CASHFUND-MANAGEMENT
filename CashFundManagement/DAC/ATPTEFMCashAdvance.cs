@@ -133,6 +133,14 @@ namespace CashFundManagement.DAC
         public abstract class descr : PX.Data.BQL.BqlString.Field<descr> { }
         #endregion
 
+        #region Descr
+        [PXDBString()]
+        [PXDefault()]
+        [PXUIField()]
+        public virtual string DescriptTonSssSss { get; set; }
+        public abstract class descriptTonSssSss : PX.Data.BQL.BqlString.Field<descriptTonSssSss> { }
+        #endregion
+
         #region RequestedByID
         [PXDBInt]
         [PXDefault(typeof(Search<
@@ -476,7 +484,7 @@ namespace CashFundManagement.DAC
                 Where<EPEmployee.bAccountID, Equal<Current<requestedByID>>>>),
             PersistingCheck = PXPersistingCheck.Nothing)]
         [PXFormula(typeof(Default<requestedByID>))]
-        [PXUIField(DisplayName = "Tax Zone", Visibility = PXUIVisibility.Visible)]        
+        [PXUIField(DisplayName = "Tax Zone", Visibility = PXUIVisibility.Visible)]
         [PXSelector(typeof(TaxZone.taxZoneID), DescriptionField = typeof(TaxZone.descr), Filterable = true)]
         public virtual string TaxZoneID { get; set; }
         #endregion
@@ -578,7 +586,7 @@ namespace CashFundManagement.DAC
         [PXDecimal()]
         [PXUIField(DisplayName = "Balance", Enabled = false)]
         [PXUnboundDefault(typeof(Search<
-            APPayment.curyDocBal, 
+            APPayment.curyDocBal,
             Where<APPayment.docType, Equal<Current<ppmType>>,
                 And<APPayment.refNbr, Equal<Current<ppmRefNbr>>>>>), PersistingCheck = PXPersistingCheck.Nothing)]
         [PXFormula(typeof(Default<ATPTEFMCashAdvance.ppmRefNbr>))]
