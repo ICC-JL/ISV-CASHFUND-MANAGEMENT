@@ -1,3 +1,11 @@
+Review this issue for the ATPTEFM CashFundManagement Acumatica ISV solution.
+            If the issue describes a clear, actionable bug or feature request that can be safely implemented:
+            - Create a new branch
+            - Implement the fix or feature
+            - Open a pull request that references this issue
+            - Include a concise description of the changes and any testing notes
+            If the issue is unclear, requires more information, or is not safe to automate, do not comment or create a PR.
+
 name: Issue Triage
 on:
   issues:
@@ -27,12 +35,6 @@ jobs:
 
       - uses: actions/checkout@v6
         if: steps.check.outputs.result == 'true'
-
-      - name: Configure Git identity
-        if: steps.check.outputs.result == 'true'
-        run: |
-          git config --global user.email "github-actions@github.com"
-          git config --global user.name "GitHub Actions"
 
       - uses: anomalyco/opencode/github@latest
         if: steps.check.outputs.result == 'true'
