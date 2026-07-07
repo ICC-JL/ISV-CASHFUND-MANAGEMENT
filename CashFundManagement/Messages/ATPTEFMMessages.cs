@@ -258,6 +258,7 @@ namespace CashFundManagement.Messages
         public const string ViewPrepayment = "View Prepayment";
         public const string CACancel = "Cancel";
         public const string Refund = "Refund";
+        public const string IsReady = "Ready";
         public const string DescCharExceeds = "Cash advance Description field must not be greater than 194 characters long.";
         public const string CAPrepaymentBillDesc = "Cash Advance Request {0} {1}";
 
