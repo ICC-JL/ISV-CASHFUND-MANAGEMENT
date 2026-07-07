@@ -27,7 +27,6 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           model: kimi-for-coding/k2p6
-          agent: acumatica-orchestrator
           use_github_token: true
           prompt: |
             You are reviewing a Pull Request for the ATPTEFM CashFundManagement Acumatica ISV solution.
