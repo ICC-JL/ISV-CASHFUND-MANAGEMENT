@@ -1,0 +1,119 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.14.36616.10 d17.14
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pages", "Pages", "{E6EF794C-A728-4154-BDA3-60776CE2C37C}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ATPT", "ATPT", "{3481439D-D3D1-4977-861A-D65BF4ECE36B}"
+	ProjectSection(SolutionItems) = preProject
+		Pages\ATPT\ATPT1003.aspx = Pages\ATPT\ATPT1003.aspx
+		Pages\ATPT\ATPT1003.aspx.cs = Pages\ATPT\ATPT1003.aspx.cs
+		Pages\ATPT\ATPT1004.aspx = Pages\ATPT\ATPT1004.aspx
+		Pages\ATPT\ATPT1004.aspx.cs = Pages\ATPT\ATPT1004.aspx.cs
+		Pages\ATPT\ATPT1005.aspx = Pages\ATPT\ATPT1005.aspx
+		Pages\ATPT\ATPT1005.aspx.cs = Pages\ATPT\ATPT1005.aspx.cs
+		Pages\ATPT\ATPT2012.aspx = Pages\ATPT\ATPT2012.aspx
+		Pages\ATPT\ATPT2012.aspx.cs = Pages\ATPT\ATPT2012.aspx.cs
+		Pages\ATPT\ATPT2101.aspx = Pages\ATPT\ATPT2101.aspx
+		Pages\ATPT\ATPT2101.aspx.cs = Pages\ATPT\ATPT2101.aspx.cs
+		Pages\ATPT\ATPT2102.aspx = Pages\ATPT\ATPT2102.aspx
+		Pages\ATPT\ATPT2102.aspx.cs = Pages\ATPT\ATPT2102.aspx.cs
+		Pages\ATPT\ATPT2103.aspx = Pages\ATPT\ATPT2103.aspx
+		Pages\ATPT\ATPT2103.aspx.cs = Pages\ATPT\ATPT2103.aspx.cs
+		Pages\ATPT\ATPT2104.aspx = Pages\ATPT\ATPT2104.aspx
+		Pages\ATPT\ATPT2104.aspx.cs = Pages\ATPT\ATPT2104.aspx.cs
+		Pages\ATPT\ATPT2105.aspx = Pages\ATPT\ATPT2105.aspx
+		Pages\ATPT\ATPT2105.aspx.cs = Pages\ATPT\ATPT2105.aspx.cs
+		Pages\ATPT\ATPT3011.aspx = Pages\ATPT\ATPT3011.aspx
+		Pages\ATPT\ATPT3011.aspx.cs = Pages\ATPT\ATPT3011.aspx.cs
+		Pages\ATPT\ATPT3012.aspx = Pages\ATPT\ATPT3012.aspx
+		Pages\ATPT\ATPT3012.aspx.cs = Pages\ATPT\ATPT3012.aspx.cs
+		Pages\ATPT\ATPT3103.aspx = Pages\ATPT\ATPT3103.aspx
+		Pages\ATPT\ATPT3103.aspx.cs = Pages\ATPT\ATPT3103.aspx.cs
+		Pages\ATPT\ATPT3104.aspx = Pages\ATPT\ATPT3104.aspx
+		Pages\ATPT\ATPT3104.aspx.cs = Pages\ATPT\ATPT3104.aspx.cs
+		Pages\ATPT\ATPT3105.aspx = Pages\ATPT\ATPT3105.aspx
+		Pages\ATPT\ATPT3105.aspx.cs = Pages\ATPT\ATPT3105.aspx.cs
+		Pages\ATPT\ATPT5016.aspx = Pages\ATPT\ATPT5016.aspx
+		Pages\ATPT\ATPT5016.aspx.cs = Pages\ATPT\ATPT5016.aspx.cs
+		Pages\ATPT\ATPT5017.aspx = Pages\ATPT\ATPT5017.aspx
+		Pages\ATPT\ATPT5017.aspx.cs = Pages\ATPT\ATPT5017.aspx.cs
+		Pages\ATPT\ATPT5018.aspx = Pages\ATPT\ATPT5018.aspx
+		Pages\ATPT\ATPT5018.aspx.cs = Pages\ATPT\ATPT5018.aspx.cs
+		Pages\ATPT\ATPT9201.aspx = Pages\ATPT\ATPT9201.aspx
+		Pages\ATPT\ATPT9201.aspx.cs = Pages\ATPT\ATPT9201.aspx.cs
+		Pages\ATPT\ATPT9202.aspx = Pages\ATPT\ATPT9202.aspx
+		Pages\ATPT\ATPT9202.aspx.cs = Pages\ATPT\ATPT9202.aspx.cs
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CustomizationSourceControl", "CustomizationSourceControl", "{1F23EF51-8740-486A-96A0-9656561FD7B5}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjectSourceControl", "ProjectSourceControl\ProjectSourceControl.csproj", "{F2CD2F06-0083-4132-90B8-584A6C3BBD38}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "26R1", "26R1", "{9C5A6D7E-F8B0-4B34-C5D6-E7F80A1B2C3D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFundManagement-26R1", "CashFundManagement\CashFundManagement-26R1.csproj", "{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CashFundPhilippineTax-26R1", "CashFundPhilippineTax\CashFundPhilippineTax-26R1.csproj", "{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|Any CPU = Release|Any CPU
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Debug|x64.Build.0 = Debug|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Debug|x86.Build.0 = Debug|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Release|x64.ActiveCfg = Release|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Release|x64.Build.0 = Release|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Release|x86.ActiveCfg = Release|Any CPU
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38}.Release|x86.Build.0 = Release|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Debug|x64.Build.0 = Debug|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Debug|x86.Build.0 = Debug|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Release|x64.ActiveCfg = Release|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Release|x64.Build.0 = Release|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Release|x86.ActiveCfg = Release|Any CPU
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B}.Release|x86.Build.0 = Release|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Debug|x64.Build.0 = Debug|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Debug|x86.Build.0 = Debug|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Release|x64.ActiveCfg = Release|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Release|x64.Build.0 = Release|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Release|x86.ActiveCfg = Release|Any CPU
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{E6EF794C-A728-4154-BDA3-60776CE2C37C} = {1F23EF51-8740-486A-96A0-9656561FD7B5}
+		{3481439D-D3D1-4977-861A-D65BF4ECE36B} = {E6EF794C-A728-4154-BDA3-60776CE2C37C}
+		{F2CD2F06-0083-4132-90B8-584A6C3BBD38} = {1F23EF51-8740-486A-96A0-9656561FD7B5}
+		{7A3E4B5C-D6F8-4912-A3B4-C5D6E7F80A1B} = {9C5A6D7E-F8B0-4B34-C5D6-E7F80A1B2C3D}
+		{8B4F5C6D-E7A9-4A23-B4C5-D6E7F80A1B2C} = {9C5A6D7E-F8B0-4B34-C5D6-E7F80A1B2C3D}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A714D36-F3BB-42D6-BD2B-C36F2085613C}
+	EndGlobalSection
+EndGlobal

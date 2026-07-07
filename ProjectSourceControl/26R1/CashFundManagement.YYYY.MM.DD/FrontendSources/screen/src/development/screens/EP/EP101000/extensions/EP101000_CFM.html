@@ -1,0 +1,36 @@
+<template>
+	<!--
+		26R1 NOTE: Acumatica's stock EP101000.html splits Setup into three tabs
+		(General / Expenses / Time Reporting) and reuses id="GeneralForm" on the
+		qp-template of ALL THREE tabs. The modern-UI build's html-merge-loader runs
+		verifyScreen() whenever a customization touches a screen, and it enforces
+		GLOBALLY unique element ids — so the stock duplicate ids make publish fail
+		with: "Element ids are not unique: id=GeneralForm tags=QP-TEMPLATE,QP-TEMPLATE,QP-TEMPLATE".
+
+		Fix: rename the Expenses- and Time-tab GeneralForm templates to unique ids.
+		The selector is PARENT-SCOPED (#ExpensesTab #GeneralForm) so it matches exactly
+		one element — a bare #GeneralForm would match three and throw "more than one
+		element". Layout is driven by name="1-1", not by id, so appearance is unchanged.
+		Leave the General-tab GeneralForm as-is; only two need renaming for uniqueness.
+	-->
+	<qp-template modify="#ExpensesTab #GeneralForm" id="GeneralForm_Expenses"></qp-template>
+	<qp-template modify="#TimeTab #GeneralForm" id="GeneralForm_Time"></qp-template>
+
+	<!-- Slot B - Expense Claim Settings fieldset (26R1: formSetup06 lives on the Expenses tab) -->
+	<!-- All custom fields go after RequireRefNbrInExpenseReceipts -->
+
+	<!-- Raise Error on Duplicate Ref Nbr - after RequireRefNbrInExpenseReceipts -->
+	<field after="#formSetup06 [name='RequireRefNbrInExpenseReceipts']"
+	       name="UsrATPTEFMRaiseErrorOnDuplicateRefNbr">
+	</field>
+
+	<!-- Require Approval for RFP Bill - after AllowMixedTaxSettingInClaims -->
+	<field after="#formSetup06 [name='AllowMixedTaxSettingInClaims']"
+	       name="UsrATPTEFMIsRequireApprovalRFPBill">
+	</field>
+
+	<!-- Use Financial Tab Tax Zone for Details - after UsrATPTEFMIsRequireApprovalRFPBill -->
+	<field after="#formSetup06 [name='UsrATPTEFMIsRequireApprovalRFPBill']"
+	       name="UsrATPTEFMUseFinancialTabTaxZoneForDetails">
+	</field>
+</template>

@@ -1,0 +1,52 @@
+name: PR-Builder
+
+on:
+  pull_request:
+    branches: [main,24R2_main]
+  workflow_dispatch:
+
+env:
+    buildFolder: '..\BUILDS'
+
+jobs:
+ build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
+
+    - name: Build Project CashFundManagement.csproj 23R2
+      run: msbuild CashFundManagement/CashFundManagement.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundPhilippineTax.csproj 23R2
+      run: msbuild CashFundPhilippineTax/CashFundPhilippineTax.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundManagement-24R1.csproj
+      run: msbuild CashFundManagement/CashFundManagement-24R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundPhilippineTax-24R1.csproj
+      run: msbuild CashFundPhilippineTax/CashFundPhilippineTax-24R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundManagement-24R2.csproj
+      run: msbuild CashFundManagement/CashFundManagement-24R2.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundPhilippineTax-24R2.csproj
+      run: msbuild CashFundPhilippineTax/CashFundPhilippineTax-24R2.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundManagement-25R1.csproj
+      run: msbuild CashFundManagement/CashFundManagement-25R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundPhilippineTax-25R1.csproj
+      run: msbuild CashFundPhilippineTax/CashFundPhilippineTax-25R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundManagement-26R1.csproj
+      run: msbuild CashFundManagement/CashFundManagement-26R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+    - name: Build Project CashFundPhilippineTax-26R1.csproj
+      run: msbuild CashFundPhilippineTax/CashFundPhilippineTax-26R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=

@@ -1,0 +1,66 @@
+<template>
+    <qp-tabbar id="tab">
+	<qp-tab id="tab0" caption="General Settings"> 
+         
+<qp-template id="Preference_enableDisableRow_20" name="1-1"> 
+	<qp-fieldset id="Preference_enableDisableRow00" wg-container view.bind="Preference" slot="A" >
+		<field name="EnableCFM" ></field>
+		</qp-fieldset>
+				<qp-fieldset id="Preference_enableDisableRow010" wg-container="Preference_PXFormView2" view.bind="Preference" slot="A" caption="Numbering Settings">
+		<field name="CANumberingID" config-allow-edit.bind="true"></field>
+			<field name="LiquidationNumberingID" config-allow-edit.bind="true"></field>
+		</qp-fieldset>
+				<qp-fieldset id="Preference_enableDisableRow020" wg-container="Preference_PXFormView2" view.bind="Preference" slot="A" caption="Cash Advance Settings">
+		<field name="AllowableCAAmt" ></field>
+			<field name="RVAllowableCAAmt" ></field>
+			<field name="AllowableOpenCA" ></field>
+			<field name="RVAllowableOpenCA" ></field>
+			<field name="IsFilterByEmployeeDelegates" ></field>
+			<field name="AutoReleaseAP" ></field>
+			<field name="RestrictCAEmployees" ></field>
+			<field name="CopyAPNotes" ></field>
+			<field name="IsRequireApprovalCashAdvanceBill" ></field>
+			<field name="AllowSubmissionExcessCA" ></field>
+			<field name="CopyECNotes" ></field>
+		</qp-fieldset>
+				<qp-fieldset id="Preference_enableDisableRow101" wg-container="Preference_PXFormView2" view.bind="Preference" slot="B" caption="Liquidation Settings">
+		<field name="LiquidationRule" ></field>
+			<field name="StandardAllowableDays" ></field>
+			<field name="ReClassAccoundID" ></field>
+			<field name="ReClassSubID" ></field>
+			<field name="LiquidationDateBasedOnWorkCalendar" ></field>
+			<field name="AutoApplyPPT" ></field>
+			<field name="AutoApplyCredAdjPPT" ></field>
+			<field name="AllowManualReceipts" ></field>
+			<field name="RequireExtRef" ></field>
+			<field name="IsRequireApprovalLiquidationBill" ></field>
+			<field name="RequireVendorDetails" ></field>
+			<field name="CashAdvanceAccountEnable" ></field>
+			<field name="CashAdvanceSubAccountEnable" ></field>
+			<field name="SetNonStockItemDescriptionAsDefault" ></field>
+		</qp-fieldset>
+			</qp-template> 
+    </qp-tab>
+<qp-tab id="tab1" caption="Cash Advance Approval"> 
+<qp-template id="CashAdvanceApproval_template" name="1-1"> 
+	<qp-fieldset id="Preference_CashAdvanceApproval" wg-container view.bind="Preference" slot="A" caption="Cash Advance Approval Settings">
+		<field name="CashAdvanceRequestApproval" ></field>
+	</qp-fieldset>
+	<qp-fieldset id="CashAdvanceApproval_Grid" wg-container="CashAdvanceApproval_PXGrid" slot="A" caption="Approval Map">
+		<qp-grid id="CashAdvanceApproval_PXGrid1" view.bind="CashAdvanceApproval"></qp-grid>
+	</qp-fieldset>
+</qp-template> 
+    </qp-tab>
+<qp-tab id="tab2" caption="Employees"> 
+         <qp-grid id="EmployeeCashAdvance_PXGrid3" view.bind="EmployeeCashAdvance"></qp-grid>
+    </qp-tab>
+<qp-tab id="tab3" caption="Migration Settings"> 
+<qp-template id="MigrationSettings_template" name="1-1"> 
+	<qp-fieldset id="Preference_MigrationSettings" wg-container view.bind="Preference" slot="A" caption="Cash Fund Management">
+		<field name="IsCashAdvanceMigration" ></field>
+	</qp-fieldset>
+</qp-template>
+    </qp-tab>
+</qp-tabbar>
+	
+</template>

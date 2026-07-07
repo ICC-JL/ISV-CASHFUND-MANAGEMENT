@@ -1,0 +1,49 @@
+<template>
+  <qp-template id="Setup_template" name="1-1">
+    <qp-fieldset id="Setup_BudgetFeatures" wg-container view.bind="Setup" slot="A" caption="Budget Features">
+      <field name="BudgetModules"></field>
+      <field name="BudgetFeatureSet"></field>
+      <field name="BudgetDocumentAmount"></field>
+      <field name="BudgetRequestAmount"></field>
+      <field name="BudgetBudgetAmount"></field>
+      <field name="BudgetSpentAmount"></field>
+      <field name="BudgetReturnAmount"></field>
+      <field name="BudgetApprovedAmount"></field>
+      <field name="BudgetUnapprovedAmount"></field>
+      <field name="BudgetLedgerID"></field>
+      <field name="BudgetCalculation"></field>
+      <field name="BudgetValidation"></field>
+    </qp-fieldset>
+
+    <qp-fieldset id="Setup_ProjectBudgetFeatures" wg-container view.bind="Setup" slot="B" caption="Project Budget Features">
+      <field name="ProjectBudgetModules"></field>
+      <field name="ProjectBudgetFeatureSet"></field>
+      <field name="ProjectBudgetDocumentAmount"></field>
+      <field name="ProjectBudgetRequestAmount"></field>
+      <field name="ProjectBudgetReturnAmount"></field>
+      <field name="ProjectBudgetBudgetAmount"></field>
+      <field name="ProjectBudgetSpentAmount"></field>
+      <field name="ProjectBudgetApprovedAmount"></field>
+      <field name="ProjectBudgetUnapprovedAmount"></field>
+      <field name="ProjectBudgetLedgerID"></field>
+      <field name="ProjectBudgetCalculation"></field>
+      <field name="ProjectBudgetValidation"></field>
+    </qp-fieldset>
+
+    <qp-fieldset id="Setup_TransferAsset" wg-container view.bind="Setup" slot="A" caption="Transfer Asset">
+      <field name="TransferAssetCustodian"></field>
+      <field name="TransferAssetBuilding"></field>
+      <field name="TransferAssetFloor"></field>
+      <field name="TransferAssetRoom"></field>
+    </qp-fieldset>
+
+    <qp-fieldset id="Setup_FundTransaction" wg-container view.bind="Setup" slot="B" caption="Fund Transaction">
+      <field name="LimitValidation"></field>
+      <field name="LimitValidationAmt"></field>
+    </qp-fieldset>
+
+    <qp-fieldset id="Setup_CashAdvance" wg-container view.bind="Setup" slot="A" caption="Cash Advance">
+      <field name="CashAdvanceOverride"></field>
+    </qp-fieldset>
+  </qp-template>
+</template>

@@ -1,0 +1,22 @@
+<template>
+	<!-- Append custom fieldsets after Payment Info on the Financial tab. -->
+	<template modify="#formFinancial">
+		<qp-fieldset
+			slot="B"
+			id="groupReferenceDocument"
+			view.bind="CurrentDocument"
+			caption="Reference Document">
+			<field name="UsrATPTEFMSourceType"></field>
+			<field name="UsrATPTEFMSourceRef"></field>
+		</qp-fieldset>
+		<qp-fieldset
+			slot="B"
+			id="groupTransactionDocument"
+			view.bind="CurrentDocument"
+			caption="Transaction Document">
+			<field name="UsrATPTEFMTranType"></field>
+			<field name="UsrATPTEFMReqType"></field>
+			<field name="UsrATPTEFMLiqNbr"></field>
+		</qp-fieldset>
+	</template>
+</template>

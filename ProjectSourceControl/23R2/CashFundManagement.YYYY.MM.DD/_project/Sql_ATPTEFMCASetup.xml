@@ -1,0 +1,56 @@
+﻿<Sql TableName="ATPTEFMCASetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml">
+	  <![CDATA[<table name="ATPTEFMCASetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="EnableCFM" type="Bit" nullable="true" />
+  <col name="CashAdvanceRequestApproval" type="Bit" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="FundTransactionRequestApproval" type="Bit" nullable="true" />
+  <col name="ReplenishmentRequestApproval" type="Bit" nullable="true" />
+  <col name="MonthEndRequestApproval" type="Bit" nullable="true" />
+  <col name="ReClassAccoundID" type="Int" nullable="true" />
+  <col name="ReClassSubID" type="Int" nullable="true" />
+  <col name="MaterialRequestRequestApproval" type="Bit" nullable="true" />
+  <col name="CANumberingID" type="NVarChar(10)" nullable="true" />
+  <col name="LiquidationNumberingID" type="NVarChar(10)" nullable="true" />
+  <col name="AllowableCAAmt" type="Bit" nullable="true" />
+  <col name="RVAllowableCAAmt" type="Int" nullable="true" />
+  <col name="AllowableOpenCA" type="Bit" nullable="true" />
+  <col name="RVAllowableOpenCA" type="Int" nullable="true" />
+  <col name="RestrictCAEmployees" type="Bit" nullable="true" />
+  <col name="AutoReleaseAP" type="Bit" nullable="true" />
+  <col name="CopyAPNotes" type="Bit" nullable="true" />
+  <col name="RequireExtRef" type="Bit" nullable="true" />
+  <col name="LiquidationRule" type="Char(1)" nullable="true" />
+  <col name="StandardAllowableDays" type="Int" nullable="true" />
+  <col name="AutoApplyPPT" type="Bit" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="AllowManualReceipts" type="Bit" nullable="true" />
+  <col name="IsCashAdvanceMigration" type="Bit" nullable="true" />
+  <col name="IsFundsMigration" type="Bit" nullable="true" />
+  <col name="RequireVendorDetails" type="Bit" nullable="true" />
+  <col name="AllowSubmissionExcessCA" type="Bit" nullable="true" />
+  <col name="IsFilterByEmployeeDelegates" type="Bit" nullable="true" />
+  <col name="IsRequireApprovalCashAdvanceBill" type="Bit" nullable="true" />
+  <col name="IsRequireApprovalLiquidationBill" type="Bit" nullable="true" />
+  <col name="AutoApplyCredAdjPPT" type="Bit" nullable="true" />
+  <col name="CopyECNotes" type="Bit" nullable="true" />
+  <col name="CashAdvanceAccountEnable" type="Bit" nullable="true" />
+  <col name="CashAdvanceSubAccountEnable" type="Bit" nullable="true" />
+  <col name="LiquidationDateBasedOnWorkCalendar" type="Bit" nullable="true" />
+  <col name="SetNonStockItemDescriptionAsDefault" type="Bit" nullable="true" />
+  <index name="ATPTEFMCASetup_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMCASetup_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

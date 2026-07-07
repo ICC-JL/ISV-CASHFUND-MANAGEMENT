@@ -1,0 +1,35 @@
+﻿<Sql TableName="ATPTEFMReqClass" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMReqClass">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="TranType" type="Char(3)" />
+  <col name="ReqClassID" type="NVarChar(10)" />
+  <col name="NumberingID" type="NVarChar(10)" />
+  <col name="Descr" type="NVarChar(60)" nullable="true" />
+  <col name="RestrictItemList" type="Bit" nullable="true" />
+  <col name="EnableDocumentOverride" type="Bit" nullable="true" />
+  <col name="RestrictMultInvIns" type="Bit" nullable="true" />
+  <col name="NoDaysLiquidate" type="Int" nullable="true" />
+  <col name="UseExpenseAcctFrom" type="Char(1)" nullable="true" />
+  <col name="CombineExpSub" type="NVarChar(30)" nullable="true" />
+  <col name="ExpenseAcctID" type="Int" nullable="true" />
+  <col name="ExpenseSubID" type="Int" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="IsImported" type="Bit" nullable="true" />
+  <index name="ATPTEFMReqClass_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMReqClass_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="TranType" />
+    <col name="ReqClassID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

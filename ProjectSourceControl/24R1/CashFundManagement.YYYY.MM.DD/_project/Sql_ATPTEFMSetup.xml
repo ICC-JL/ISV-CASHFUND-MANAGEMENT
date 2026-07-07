@@ -1,0 +1,67 @@
+﻿<Sql TableName="ATPTEFMSetup" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml">
+      <![CDATA[<table name="ATPTEFMSetup">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="CashAdvanceRequestApproval" type="Bit" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="FundTransactionRequestApproval" type="Bit" nullable="true" />
+  <col name="ReplenishmentRequestApproval" type="Bit" nullable="true" />
+  <col name="MonthEndRequestApproval" type="Bit" nullable="true" />
+  <col name="AllowMultipleCA" type="Bit" nullable="true" default="Zero" />
+  <col name="NoDaysToLiquidate" type="Int" nullable="true" default="Zero" />
+  <col name="NoDaysToLiquidateFund" type="Int" nullable="true" default="Zero" />
+  <col name="ReClassAccoundIDFund" type="Int" nullable="true" />
+  <col name="ReClassSubIDFund" type="Int" nullable="true" />
+  <col name="MaterialRequestRequestApproval" type="Bit" nullable="true" />
+  <col name="PCFAccount" type="Int" nullable="true" />
+  <col name="PCFSubAccount" type="Int" nullable="true" />
+  <col name="RVFAccount" type="Int" nullable="true" />
+  <col name="RVFSubAccount" type="Int" nullable="true" />
+  <col name="ClearingAccount" type="Int" nullable="true" />
+  <col name="ClearingSubaccount" type="Int" nullable="true" />
+  <col name="MonthEndTransactionAccount" type="Int" nullable="true" />
+  <col name="MonthEndTransactionSubaccount" type="Int" nullable="true" />
+  <col name="ReplenishmentLimit" type="Char(1)" nullable="true" />
+  <col name="FundType" type="NVarChar(255)" nullable="true" />
+  <col name="FundsApprovalSetup" type="Bit" nullable="true" />
+  <col name="FundNumberingID" type="NVarChar(15)" nullable="true" />
+  <col name="ReplenishmentNumberingID" type="NVarChar(15)" nullable="true" />
+  <col name="FundTransactionNumberingID" type="NVarChar(15)" nullable="true" />
+  <col name="RequireVendorDetails" type="Bit" nullable="true" />
+  <col name="AllowManualReceipts" type="Bit" nullable="true" />
+  <col name="IsFilterByEmployeeDelegates" type="Bit" nullable="true" />
+  <col name="IsRequireApprovalReplenishment" type="Bit" nullable="true" />
+  <col name="IsRequireApprovalOnFundEstablishment" type="Bit" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="MonthEndNumberingID" type="NVarChar(15)" nullable="true" />
+  <col name="AutoReleaseMonthEndJournal" type="Bit" nullable="true" />
+  <col name="FundTransactionLimit" type="Char(1)" nullable="true" />
+  <col name="RequireExternalReferenceNbr" type="Bit" nullable="true" />
+  <col name="ValidateAmountReceivedAndReleasedUponLiquidation" type="Bit" nullable="true" />
+  <col name="NoOfDaysToLiquidate" type="Int" nullable="true" />
+  <col name="ReclassificationItem" type="Int" nullable="true" />
+  <col name="EnableFundTransactionLimit" type="Bit" nullable="true" />
+  <col name="RequireApprovalOnFundDecreaseDebAdj" type="Bit" nullable="true" />
+  <col name="RequireApprovalOnFundIncreaseCredAdj" type="Bit" nullable="true" />
+  <col name="IsFundsMigration" type="Bit" nullable="true" />
+  <col name="SetNonStockItemDescriptionAsDefault" type="Bit" nullable="true" />
+  <col name="FundTransactionImportMode" type="Bit" nullable="true" />
+  <col name="LiquidationDateBasedOnWorkCalendar" type="Bit" nullable="true" />
+  <col name="UseExpenseAcctFrom" type="Char(1)" nullable="true" />
+  <col name="CombineExpSub" type="NVarChar(30)" nullable="true" />
+  <col name="RestrictCustodianByBranch" type="Bit" nullable="true" />
+  <index name="ATPTEFMSetup_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMSetup_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

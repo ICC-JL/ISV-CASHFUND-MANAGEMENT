@@ -1,0 +1,29 @@
+<template>
+     
+<qp-template id="ProjectFilter_form0_20" name="1-1"> 
+	<qp-fieldset id="ProjectFilter_form000" wg-container="ProjectFilter_form" view.bind="ProjectFilter" slot="A" >
+		<field name="FinYear" ></field>
+			<field name="LedgerID" ></field>
+			<field name="ProjectID" ></field>
+			<field name="LastModifiedByID" ></field>
+		</qp-fieldset>
+				<qp-fieldset id="ProjectFilter_form011" wg-container="ProjectFilter_form" view.bind="ProjectFilter" slot="B" >
+		<field name="CompareFinYear" ></field>
+			<field name="CompareLedgerID" ></field>
+			<field name="CompareProjectID" ></field>
+		</qp-fieldset>
+			</qp-template> 
+ <qp-grid id="Summary_grid" view.bind="Summary"></qp-grid>
+                 <qp-panel id="DistrFilter" caption="Distribute Year Amount by Months" auto-repaint="true">
+                     	<qp-fieldset id="DistributePrm0" wg-container view.bind="DistrFilter"  >
+		<field name="Method" ></field>
+			<field name="ApplyToAll" ></field>
+			<field name="ApplyToSubGroups" ></field>
+		</qp-fieldset>
+			                    <footer>
+                     <qp-button id="cbOk" caption="OK" dialog-result="OK"></qp-button>
+<qp-button id="cbCancel" caption="Cancel" dialog-result="Cancel"></qp-button>
+                    </footer>
+                 </qp-panel>
+             	
+</template>

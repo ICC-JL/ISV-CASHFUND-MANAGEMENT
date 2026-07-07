@@ -1,0 +1,80 @@
+<template>
+     
+<qp-template id="FundTransactions_form0_30" name="1-1-1" class="equal-height"> 
+	<qp-fieldset id="FundTransactions_form000" wg-container="FundTransactions_form" view.bind="FundTransactions" slot="A" >
+		<field name="FundType" ></field>
+			<field name="RefNbr" ></field>
+			<field name="FundID" ></field>
+			<field name="BranchID" ></field>
+			<field name="FundTransactionType" ></field>
+			<field name="Status" ></field>
+			<field name="Hold" ></field>
+			<field name="Approved" ></field>
+			<field name="IsImported" ></field>
+			<field name="IsOverbudget" ></field>
+			<field name="HasInitialBudget" ></field>
+			<field name="Date" ></field>
+			<field name="FinPeriodID" ></field>
+			<field name="RequestApproval" ></field>
+		</qp-fieldset>
+				<qp-fieldset id="FundTransactions_form011" wg-container="FundTransactions_form" view.bind="FundTransactions" slot="B" >
+		<field name="RequestedByID" ></field>
+			<field name="DepartmentID" ></field>
+			<field name="CashAdvanceStatus" ></field>
+			<field name="DateOfUse" ></field>
+			<field name="InitialLiqDate" ></field>
+			<field name="LiqDate" ></field>
+			<field name="Descr" config-rows.bind="3"></field>
+			<field name="ShowBudgetValidation" ></field>
+			<field name="NoFund" ></field>
+		</qp-fieldset>
+				<qp-fieldset id="FundTransactions_form022" wg-container="FundTransactions_form" view.bind="FundTransactions" slot="C" class="highlights-section">
+		<field name="RequestedAmount" ></field>
+			<field name="ActualSpentAmount" ></field>
+			<field name="TotalWhtAmount" ></field>
+			<field name="ChangeAmount" ></field>
+			<field name="AmountReceived" ></field>
+			<field name="AmountReleased" ></field>
+			<field name="ReclassificationAmt" ></field>
+			<field name="Balance" ></field>
+		</qp-fieldset>
+			</qp-template> 
+<qp-tabbar id="tab">
+	<qp-tab id="tab0" caption="Document Details"> 
+         <qp-grid id="FundTransactionDetails_PXGrid1" view.bind="FundTransactionDetails"></qp-grid>
+    </qp-tab>
+<qp-tab id="tab1" caption="Receipts"> 
+         <qp-grid id="FundTransactionReceiptLines_PXGrid2" view.bind="FundTransactionReceiptLines">
+             <toolbar>
+                 <qp-button caption="Load" state.bind="LoadRequest"></qp-button>
+             </toolbar>
+         </qp-grid>
+    <qp-caption caption="Cash"></qp:caption> 
+	<qp-fieldset id="FundTransactionCash_PXFormView1001" wg-container="FundTransactionCash_PXFormView1" view.bind="FundTransactionCash"  >
+		<field name="ReceivedAmount" ></field>
+			<field name="ReleasedAmount" ></field>
+		</qp-fieldset>
+			    </qp-tab>
+<qp-tab id="tab2" caption="Reclassification Receipts"> 
+         <qp-grid id="FundTransactionReclassficationReceiptDetail_PXGrid3" view.bind="FundTransactionReclassficationReceiptDetail"></qp-grid>
+    </qp-tab>
+<qp-tab id="tab3" caption="Approvals"> 
+         <qp-grid id="Approval_gridApproval" view.bind="Approval"></qp-grid>
+    </qp-tab>
+<qp-tab id="tab4" caption="Budget Details" if.bind="FundTransactions.BudgetEnabled.value==true"> 
+         <qp-grid id="Budget_gridBudget" view.bind="Budget"></qp-grid>
+    </qp-tab>
+<qp-tab id="tab5" caption="Project Budget Details" if.bind="FundTransactions.ProjectBudgetEnabled.value==true"> 
+         <qp-grid id="ProjectBudget_grdRLProjectBudget" view.bind="ProjectBudget"></qp-grid>
+    </qp-tab>
+</qp-tabbar>
+                 <qp-panel id="ReceiptsForSubmit" wg-container="ReceiptsForSubmit_ReceiptsForSubmit" caption="Add Receipt" auto-repaint="true" width="lg" height="85vh">
+                      <qp-grid id="ReceiptsForSubmit_gridReceiptsForSubmit" view.bind="ReceiptsForSubmit"></qp-grid>
+                    <footer>
+                     <qp-button id="PXButtonAdd" caption="Add" state.bind="SubmitReceipt"></qp-button>
+<qp-button id="PXButtonAddClose" caption="Add & Close" dialog-result="OK"></qp-button>
+<qp-button id="PXButtonClose" caption="Close" state.bind="CancelSubmitReceipt" dialog-result="Cancel"></qp-button>
+                    </footer>
+                 </qp-panel>
+             	
+</template>

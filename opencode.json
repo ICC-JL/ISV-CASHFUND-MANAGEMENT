@@ -1,0 +1,41 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "model": "kimi-for-coding/k2p6",
+  "small_model": "kimi-for-coding/k2p6",
+  "default_agent": "acumatica-orchestrator",
+
+  "command": {
+    "build": {
+      "description": "Build and deploy the Acumatica customization",
+      "template": "Run the build-and-deploy.bat script located at .bat\\build-and-deploy.bat. Ask the user which profile (23R2, 24R1, 24R2, 25R1) if not specified.",
+      "model": "kimi-for-coding/k2p6"
+    },
+    "generate-sql": {
+      "description": "Generate SQL CREATE TABLE script from a DAC file",
+      "template": "Read the specified DAC file and generate a corresponding SQL CREATE TABLE script following Acumatica conventions. Include CompanyID, all audit fields, primary key, and indexes. Save to ..\\..\\SCRIPTS\\<TableName>.sql.",
+      "model": "kimi-for-coding/k2p6"
+    },
+    "review-pr": {
+      "description": "Run PR review checklist for Acumatica code",
+      "template": "Read .github\\instructions\\PR-Review-Guidelines.md and review the current changes (or specified files) against the checklist. Report any violations of naming conventions, missing ATPTEFMMessages strings, hardcoded values, or missing SQL scripts.",
+      "model": "kimi-for-coding/k2p6"
+    },
+    "cert-check": {
+      "description": "Check code against Acumatica certification guidelines",
+      "template": "Review the code for common certification issues: PX1097, PX1068, PX1066, PX1065, PX1060. Reference the guides in .github\\Certification-instructions\\ and report any violations.",
+      "model": "kimi-for-coding/k2p6"
+    },
+    "dac-scaffold": {
+      "description": "Generate a new DAC with full structure",
+      "template": "Create a new Acumatica DAC following the ATPTEFM naming convention. Include: PK class, FK class, all standard fields (RefNbr, BranchID, CustomerID, NoteID), inherit from ATPTEFMAudit, use ATPTEFMMessages for display names, and generate the corresponding SQL script.",
+      "model": "kimi-for-coding/k2p6"
+    },
+    "workflow-check": {
+      "description": "Validate workflow definition syntax and patterns",
+      "template": "Review the workflow extension code against Acumatica 2021R1+ workflow framework patterns. Verify state identifiers, flow states, actions, and transitions are correctly defined.",
+      "model": "kimi-for-coding/k2p6"
+    }
+  },
+
+
+}

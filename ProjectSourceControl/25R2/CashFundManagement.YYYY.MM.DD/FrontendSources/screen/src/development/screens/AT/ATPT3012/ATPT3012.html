@@ -1,0 +1,84 @@
+<template>
+  <qp-template id="Replenishments_form0_30" name="1-1-1" class="equal-height">
+    <qp-fieldset id="Replenishments_form000" slot="A" view.bind="Replenishments" wg-container="Replenishments_form">
+      <field name="FundType"></field>
+      <field name="ReplenishmentNbr"></field>
+      <field name="FundID"></field>
+      <field name="Status"></field>
+      <field name="Hold"></field>
+      <field name="Date"></field>
+      <field name="Approved"></field>
+      <field name="RequestApproval"></field>
+    </qp-fieldset>
+    <qp-fieldset id="Replenishments_form011" slot="B" view.bind="Replenishments" wg-container="Replenishments_form">
+      <field name="CustodianID"></field>
+      <field name="PayeeID"></field>
+      <field name="DepartmentID"></field>
+      <field name="BranchID"></field>
+      <field name="Descr" config-rows.bind="3"></field>
+    </qp-fieldset>
+    <qp-fieldset id="Replenishments_form022"
+        slot="C"
+        view.bind="Replenishments"
+        class="highlights-section"
+        wg-container="Replenishments_form">
+      <field name="ClaimAmount"></field>
+      <field name="WithholdingTaxAmount"></field>
+      <field name="VatAmount"></field>
+    </qp-fieldset>
+  </qp-template>
+  <qp-tabbar id="tab">
+    <qp-tab id="tab0" caption="Replenishment Details">
+      <qp-grid id="ReplenishmentDetails_PXGrid1" view.bind="ReplenishmentDetails"></qp-grid>
+    </qp-tab>
+    <qp-tab id="tab1" caption="Taxes">
+      <qp-template id="Taxes_template" name="17-7">
+        <div slot="A">
+          <qp-grid id="Taxes_grdTaxes" view.bind="Taxes"></qp-grid>
+        </div>
+        <div slot="B"></div>
+      </qp-template>
+    </qp-tab>
+    <qp-tab id="tab2" caption="Financial Details">
+      <qp-template id="FinancialDetails_template" name="17-31">
+        <div slot="A">
+          <qp-fieldset id="ReplenishmentCurrent_PXFormView100"
+              view.bind="ReplenishmentCurrent"
+              caption="Tax"
+              wg-container="ReplenishmentCurrent_PXFormView1">
+            <field name="TaxZone"></field>
+          </qp-fieldset>
+          <qp-grid id="APInvoiceDocument_PXGrid2"
+              view.bind="APInvoiceDocument"
+              caption="Link to AP"
+              class="framed-section"></qp-grid>
+          <qp-grid id="APPaymentDocument_gridAPPaymentDocument"
+              view.bind="APPaymentDocument"
+              caption="Link to Check"
+              class="framed-section"></qp-grid>
+        </div>
+        <div slot="B"></div>
+      </qp-template>
+    </qp-tab>
+    <qp-tab id="tab3" caption="Approvals">
+      <qp-grid id="Approval_gridApproval" view.bind="Approval"></qp-grid>
+    </qp-tab>
+  </qp-tabbar>
+  <qp-panel id="ReceiptsForSubmit"
+      caption="Add Receipts"
+      auto-repaint="true"
+      wg-container="ReceiptsForSubmit_ReceiptsForSubmit">
+    <qp-grid id="ReceiptsForSubmit_gridReceiptsForSubmit" view.bind="ReceiptsForSubmit"></qp-grid>
+    <footer>
+      <qp-button id="PXButtonAdd" state.bind="SubmitReceipt" caption="Add"></qp-button>
+      <qp-button id="PXButtonAddClose" dialog-result="OK" caption="Add & Close"></qp-button>
+      <qp-button id="PXButtonClose" dialog-result="Cancel" state.bind="CancelSubmitReceipt" caption="Close"></qp-button>
+    </footer>
+  </qp-panel>
+  <qp-panel id="Tax_Rows" caption="Document Taxes" auto-repaint="true" wg-container="Tax_Rows_Tax_Rows">
+    <qp-grid id="Tax_Rows_grdTaxRows" view.bind="Tax_Rows"></qp-grid>
+    <footer>
+      <qp-button id="btnCommitTaxRows" dialog-result="Yes" state.bind="CommitTaxes" caption="Ok"></qp-button>
+    </footer>
+  </qp-panel>
+</template>

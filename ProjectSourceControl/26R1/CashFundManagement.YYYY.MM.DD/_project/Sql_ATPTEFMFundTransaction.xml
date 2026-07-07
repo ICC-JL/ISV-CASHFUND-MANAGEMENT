@@ -1,0 +1,70 @@
+﻿<Sql TableName="ATPTEFMFundTransaction" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMFundTransaction">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="FundTransactionType" type="Char(1)" />
+  <col name="RefNbr" type="NVarChar(15)" />
+  <col name="Status" type="Char(1)" />
+  <col name="Hold" type="Bit" />
+  <col name="Date" type="DateTime" />
+  <col name="FinPeriodID" type="Char(6)" />
+  <col name="Descr" type="NVarChar(255)" nullable="true" />
+  <col name="RequestedByID" type="Int" />
+  <col name="DepartmentID" type="NVarChar(10)" />
+  <col name="FundID" type="NVarChar(15)" nullable="true" />
+  <col name="CashAdvanceStatus" type="Char(1)" />
+  <col name="RequestedAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="ActualSpentAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="ChangeAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="ReceivedAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="ReleasedAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="InvoiceRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="Step" type="Char(1)" nullable="true" />
+  <col name="Approved" type="Bit" nullable="true" />
+  <col name="WorkGroupID" type="Int" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="Rejected" type="Bit" nullable="true" />
+  <col name="BranchID" type="Int" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CuryInfoID" type="BigInt" default="Zero" />
+  <col name="DaysExtend" type="Int" nullable="true" default="Zero" />
+  <col name="ReclassifyDate" type="DateTime" nullable="true" />
+  <col name="Reclassified" type="Bit" default="Zero" />
+  <col name="ReclassifiedInvoiceRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="TaxZoneID" type="NVarChar(30)" nullable="true" />
+  <col name="NoFund" type="Bit" nullable="true" />
+  <col name="TotalReceipt" type="Decimal(19,4)" nullable="true" />
+  <col name="TotalApprovalAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="OwnerID" type="Int" nullable="true" />
+  <col name="FundType" type="Char(1)" />
+  <col name="IsImported" type="Bit" nullable="true" />
+  <col name="IsReleasedCash" type="Bit" nullable="true" />
+  <col name="IsOverbudget" type="Bit" nullable="true" />
+  <col name="TotalWhtAmount" type="Decimal(19,4)" nullable="true" default="Zero" />
+  <col name="AmountReceived" type="Decimal(19,4)" nullable="true" />
+  <col name="AmountReleased" type="Decimal(19,4)" nullable="true" />
+  <col name="DateOfUse" type="DateTime" nullable="true" />
+  <col name="LiqDate" type="DateTime" nullable="true" />
+  <col name="HasInitialBudget" type="Bit" nullable="true" />
+  <col name="ReclassificationAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="IsSubmitReceiptFlag" type="Bit" nullable="true" />
+  <col name="BudgetEnabled" type="Bit" nullable="true" />
+  <col name="InitialLiqDate" type="DateTime" nullable="true" />
+  <col name="UnmodifiedLiqDate" type="DateTime" nullable="true" />
+  <col name="ProjectBudgetEnabled" type="Bit" nullable="true" />
+  <index name="ATPTEFMFundTransaction_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMFundTransaction_pk" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="FundTransactionType" />
+    <col name="RefNbr" />
+  </index>
+</table>]]></CDATA>
+</Sql>

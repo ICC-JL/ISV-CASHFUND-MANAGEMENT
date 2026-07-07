@@ -1,0 +1,35 @@
+<template>
+  <qp-template id="ReqClasses_template" name="1-1" class="label-size-xm">
+    <!-- General (form) stays outside of tabs -->
+    <qp-fieldset id="ReqClasses_General" view.bind="ReqClasses" caption="General" wg-container>
+      <field name="TranType" class="col-6"></field>
+      <field name="ReqClassID" class="col-6"></field>
+      <field name="NumberingID" class="col-6"></field>
+      <field name="Descr" class="col-6"></field>
+      <field name="RestrictItemList"></field>
+      <field name="EnableDocumentOverride"></field>
+      <field name="RestrictMultInvIns"></field>
+      <field name="NoDaysLiquidate" class="col-3"></field>
+    </qp-fieldset>
+
+    <!-- Tabs area like AP screens: GL Accounts + Item List -->
+    <qp-tabbar id="tabs">
+      <qp-tab id="tabItemList" caption="Item List">
+        <qp-grid id="Items_Grid" view.bind="Items" caption="Item List">
+          <column name="InventoryID"></column>
+          <column name="InventoryID_InventoryItem_descr" width="280px"></column>
+          <column name="Amount" align="right"></column>
+          <column name="IsPerDiem" type="checkbox" align="center"></column>
+        </qp-grid>
+      </qp-tab>
+      <qp-tab id="tabGLAccounts" caption="GL Accounts">
+        <qp-fieldset id="CurrentReqClass_GLAccounts" view.bind="CurrentReqClass" caption="GL Accounts" wg-container>
+          <field name="UseExpenseAcctFrom" class="col-6"></field>
+          <field name="CombineExpSub" class="col-6"></field>
+          <field name="ExpenseAcctID" class="col-6"></field>
+          <field name="ExpenseSubID" class="col-6"></field>
+        </qp-fieldset>
+      </qp-tab>
+    </qp-tabbar>
+  </qp-template>
+</template>

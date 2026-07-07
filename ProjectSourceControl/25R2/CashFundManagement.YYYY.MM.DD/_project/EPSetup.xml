@@ -1,0 +1,5 @@
+﻿<Table TableName="EPSetup">
+    <Column TableName="EPSetup" ColumnName="UsrATPTEFMIsRequireApprovalRFPBill" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPSetup" ColumnName="UsrATPTEFMUseFinancialTabTaxZoneForDetails" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPSetup" ColumnName="UsrATPTEFMRaiseErrorOnDuplicateRefNbr" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

@@ -1,0 +1,196 @@
+<template>
+  <qp-template id="form_30" name="1-1-1" class="equal-height">
+    <qp-fieldset
+      id="Document_form00"
+      slot="A"
+      view.bind="Document"
+      wg-container="Document_form"
+    >
+      <field name="FundType"></field>
+      <field name="FundCD"></field>
+      <field name="Status"></field>
+      <field name="Hold"></field>
+      <field name="Approved"></field>
+      <field name="DocumentDate"></field>
+    </qp-fieldset>
+    <qp-fieldset
+      id="Document_form11"
+      slot="B"
+      view.bind="Document"
+      wg-container="Document_form"
+    >
+      <field name="BranchID"></field>
+      <field name="CustodianID"></field>
+      <field name="CuryID"></field>
+      <field name="PayeeID"></field>
+      <field name="CuryInitialFund"></field>
+      <field name="Descr" config-rows.bind="3"></field>
+    </qp-fieldset>
+    <qp-fieldset
+      id="Document_form202"
+      slot="C"
+      view.bind="Document"
+      caption="Balances"
+      wg-container="Document_form"
+      class="highlights-section"
+    >
+      <field name="CuryFundAmt"></field>
+      <field name="CuryBalanceAmt"></field>
+      <field name="CuryOnReplenishmentAmt"></field>
+      <field name="CuryLiquidatedAmt"></field>
+      <field name="CuryUnliquidatedAmt"></field>
+    </qp-fieldset>
+  </qp-template>
+  <qp-tabbar id="tab">
+    <qp-tab id="tab0" caption="Transaction History">
+      <qp-grid
+        id="CurrentTransactionHistoryView_grdTransactionHistory"
+        view.bind="CurrentTransactionHistoryView"
+        wg-container="CurrentTransactionHistoryView_grid"
+      ></qp-grid>
+    </qp-tab>
+    <qp-tab id="tab1" caption="Financial Details">
+      <qp-template
+        id="CurrentDocument_tab10_30"
+        name="1-1-1"
+        class="equal-height"
+      >
+        <qp-fieldset
+          id="CurrentDocument_tab10000"
+          slot="A"
+          view.bind="CurrentDocument"
+          caption="Link to AP"
+          wg-container="CurrentDocument_tab"
+        >
+          <field name="EstablishmentRefNbr"></field>
+          <field name="CloseFundRefNbr"></field>
+          <field name="ExpenseBatchNbr"></field>
+        </qp-fieldset>
+        <qp-fieldset
+          id="CurrentDocument_tab10202"
+          slot="B"
+          view.bind="CurrentDocument"
+          caption="Project Details"
+          wg-container="CurrentDocument_tab"
+        >
+          <field name="ProjectID"></field>
+          <field name="ProjectTaskID"></field>
+          <field name="CostCodeID"></field>
+        </qp-fieldset>
+        <qp-fieldset
+          id="CurrentDocument_tab10101"
+          slot="C"
+          view.bind="CurrentDocument"
+          caption="Link to Accounts"
+          wg-container="CurrentDocument_tab"
+        >
+          <field name="AccountID"></field>
+          <field name="SubID"></field>
+          <field name="ClearingAccount"></field>
+          <field name="ClearingSubaccount"></field>
+        </qp-fieldset>
+      </qp-template>
+      <div id="CurrentDocument_tab11_vStack" class="v-stack" wg-container>
+        <qp-caption caption="Link to AP (Unreplenished Receipts)"></qp-caption>
+        <qp-grid
+          id="APInvoiceDocument_gridUnreplenishedReceipts"
+          view.bind="APInvoiceDocument"
+          wg-container="APInvoiceDocument_grid"
+        ></qp-grid>
+      </div>
+      <div id="CurrentDocument_tab12_vStack" class="v-stack" wg-container>
+        <qp-caption caption="Link to Check"></qp-caption>
+        <qp-grid
+          id="APPaymentDocument_gridCheck"
+          view.bind="APPaymentDocument"
+          wg-container="APPaymentDocument_grid"
+        ></qp-grid>
+      </div>
+    </qp-tab>
+    <qp-tab id="tab2" caption="Settings">
+      <qp-template id="CurrentDocument_frmReplenishment0_20" name="1-1">
+        <qp-fieldset
+          id="CurrentDocument_frmReplenishment0000"
+          slot="A"
+          view.bind="CurrentDocument"
+          caption="Replenishment"
+          wg-container="CurrentDocument_frmReplenishment"
+        >
+          <field name="ReplenishmentLimit"></field>
+          <field name="ReplenishPointPercent"></field>
+          <field name="ReplenishmentAmt"></field>
+          <field name="ReplenishmentRestriction"></field>
+        </qp-fieldset>
+        <qp-fieldset
+          id="CurrentDocument_frmReplenishment0101"
+          slot="B"
+          view.bind="CurrentDocument"
+          caption="Fund Transaction"
+          wg-container="CurrentDocument_frmReplenishment"
+        >
+          <field name="FundTransactionLimit"></field>
+          <field name="FundTransactionPointPercent"></field>
+          <field name="FundTransactionAmt"></field>
+          <field name="FundTransactionRestriction"></field>
+        </qp-fieldset>
+      </qp-template>
+    </qp-tab>
+    <qp-tab id="tab3" caption="Approvals">
+      <qp-grid
+        id="Approval_gridApproval"
+        view.bind="Approval"
+        wg-container="Approval_grid"
+      ></qp-grid>
+    </qp-tab>
+  </qp-tabbar>
+  <qp-panel
+    id="IncreaseFundDocument"
+    caption="Increase Fund"
+    auto-repaint="true"
+  >
+    <qp-fieldset
+      id="IncreaseFundDocument_frmIncreaseFund00"
+      view.bind="IncreaseFundDocument"
+      wg-container
+    >
+      <field name="IncreaseFund"></field>
+    </qp-fieldset>
+    <footer>
+      <qp-button
+        id="btnIncreaseFundOk"
+        dialog-result="OK"
+        caption="OK"
+      ></qp-button>
+      <qp-button
+        id="btnIncreaseFundCancel"
+        dialog-result="Cancel"
+        caption="Cancel"
+      ></qp-button>
+    </footer>
+  </qp-panel>
+  <qp-panel
+    id="DecreaseFundDocument"
+    caption="Decrease Fund"
+    auto-repaint="true"
+  >
+    <qp-fieldset
+      id="DecreaseFundDocument_frmDecreaseFund00"
+      view.bind="DecreaseFundDocument"
+      wg-container
+    >
+      <field name="DecreaseFund"></field>
+    </qp-fieldset>
+    <footer>
+      <qp-button
+        id="btnDecreaseFundOk"
+        dialog-result="OK"
+        caption="OK"
+      ></qp-button>
+      <qp-button
+        id="btnDecreaseFundCancel"
+        dialog-result="Cancel"
+        caption="Cancel"
+      ></qp-button>
+    </footer>
+  </qp-panel>
+</template>

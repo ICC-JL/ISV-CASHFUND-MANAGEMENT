@@ -1,0 +1,17 @@
+﻿<Table TableName="APRegister">
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMSourceRef" ColumnType="string" AllowNull="True" MaxLength="20" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMSourceType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMTranType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMReqType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMLiqNbr" ColumnType="string" AllowNull="True" MaxLength="20" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMSourceReqClass" ColumnType="string" AllowNull="True" MaxLength="20" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsOverbudget" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsFromReplenishment" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMSourceTranType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsUnreplenishedReceiptBill" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsFromCA" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsAmountRestrictedBill" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsCaPrepaymentBill" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsFundEstablishmentBill" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="APRegister" ColumnName="UsrATPTEFMIsCloseFundDebitAdjBill" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

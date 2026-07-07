@@ -1,0 +1,44 @@
+<template>
+	<!-- Top form Slot A: Order fields BEFORE Receipt Number -->
+	
+	<!-- Transaction Type - FIRST, before ClaimDetailCD -->
+	<field before="#formSlotA [name='ClaimDetailCD']"
+	       name="UsrATPTEFMTranType">
+	</field>
+	
+	<!-- Request Type - after Transaction Type -->
+	<field after="#formSlotA [name='UsrATPTEFMTranType']"
+	       name="UsrATPTEFMReqType">
+	</field>
+	
+	<!-- Request Class ID - after Request Type -->
+	<field after="#formSlotA [name='UsrATPTEFMReqType']"
+	       name="UsrATPTEFMReqClass">
+	</field>
+	
+	<!-- Receipt Number is now here (ClaimDetailCD) -->
+	
+	<!-- Request Reference - after ExpenseDate -->
+	<field before="#formSlotB [name='InventoryID']"
+	       name="UsrATPTEFMReqRef">
+	</field>
+
+	<!-- Top form Slot B fields -->
+	
+	<!-- Request Reference Number - FIRST in Slot B, before InventoryID -->
+	<field before="#formSlotB [name='InventoryID']"
+	       name="UsrATPTEFMRequestRefNbr">
+	</field>
+	
+	<!-- Fund Type is removed from Slot B since it's not in the screenshot -->
+	
+	<!-- Vendor - after BranchID -->
+	<field after="#formSlotB [name='BranchID']"
+	       name="UsrATPTVendorID">
+	</field>
+
+	<!-- Details tab: Fund Return field after CorpCardID -->
+	<field after="#CurrentClaimDetailsFormSlotA01 [name='CorpCardID']"
+	       name="UsrATPTEFMFundReturn">
+	</field>
+</template>

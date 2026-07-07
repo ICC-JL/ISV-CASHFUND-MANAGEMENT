@@ -1,0 +1,60 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="24R1\CashFundManagement.YYYY.MM.DD\Pages\**" />
+    <EmbeddedResource Remove="24R1\CashFundManagement.YYYY.MM.DD\Pages\**" />
+    <None Remove="24R1\CashFundManagement.YYYY.MM.DD\Pages\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT1003.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT1004.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT1005.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2012.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2101.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2102.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2103.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2104.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2105.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3011.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3012.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3103.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3104.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3105.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT5016.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT5017.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT5018.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT9201.aspx.cs" />
+    <Compile Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT9202.aspx.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT1003.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT1004.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT1005.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2012.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2101.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2102.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2103.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2104.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT2105.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3011.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3012.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3103.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3104.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT3105.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT5016.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT5017.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT5018.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT9201.aspx" />
+    <None Include="24R1\CashFundManagement.YYYY.MM.DD\Pages\ATPT\ATPT9202.aspx" />
+  </ItemGroup>
+
+</Project>

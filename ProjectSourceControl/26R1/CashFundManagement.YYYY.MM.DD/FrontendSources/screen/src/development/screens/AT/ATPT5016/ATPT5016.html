@@ -1,0 +1,12 @@
+<template>
+  <qp-grid id="Summary_grid" view.bind="Summary"></qp-grid>
+  <qp-panel id="ExtendFilter" caption="Days Extension" auto-repaint="true">
+    <qp-fieldset id="ExtendFilter_formExtend00" view.bind="ExtendFilter" wg-container>
+      <field name="Days"></field>
+    </qp-fieldset>
+    <footer>
+      <qp-button id="btnMyCommandOK" dialog-result="OK" caption="OK"></qp-button>
+      <qp-button id="btnMyCommandCancel" dialog-result="Cancel" caption="Cancel"></qp-button>
+    </footer>
+  </qp-panel>
+</template>

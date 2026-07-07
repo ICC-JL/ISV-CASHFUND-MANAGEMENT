@@ -1,0 +1,89 @@
+<template>
+  <qp-template id="Document_form0_30" name="1-1-1" class="equal-height">
+    <qp-fieldset
+      id="Document_form00_fs0"
+      slot="A"
+      view.bind="Document"
+      wg-container="Document_form"
+    >
+      <field name="RefNbr"></field>
+      <field name="Status"></field>
+      <field name="Hold"></field>
+      <field name="Approved"></field>
+      <field name="FinPeriodID"></field>
+      <field name="Date"></field>
+      <field name="RequestApproval"></field>
+    </qp-fieldset>
+    <qp-fieldset
+      id="Document_form01_fs1"
+      slot="B"
+      view.bind="Document"
+      wg-container="Document_form"
+    >
+      <field name="FundID"></field>
+      <field name="AccountID"></field>
+      <field name="SubID"></field>
+      <field name="CreditAccountID"></field>
+      <field
+        name="CuryID"
+        control-type="qp-currency"
+        width="250px"
+        view.bind="_ATPTEFMMonthEnd_CurrencyInfo_"
+      ></field>
+    </qp-fieldset>
+    <qp-fieldset
+      id="Document_form02_fs2"
+      slot="C"
+      view.bind="Document"
+      class="highlights-section"
+      wg-container="Document_form"
+    >
+      <field name="Amount"></field>
+    </qp-fieldset>
+  </qp-template>
+  <qp-tabbar id="tab">
+    <qp-tab id="tab0" caption="Document Details">
+      <qp-grid id="PXGrid1" view.bind="Details"></qp-grid>
+    </qp-tab>
+    <qp-tab id="tab1" caption="Financial Details">
+      <qp-fieldset
+        id="CurrentDocument_frmFinancialDetails0_fs0"
+        wg-container="CurrentDocument_frmFinancialDetails"
+        view.bind="CurrentDocument"
+      >
+        <field name="JournalBatchNbr"></field>
+        <field name="ReversingJournalBatchNbr"></field>
+        <field name="BranchID"></field>
+      </qp-fieldset>
+    </qp-tab>
+    <qp-tab id="tab2" caption="Approval Details">
+      <qp-grid id="gridApproval" view.bind="Approval"></qp-grid>
+    </qp-tab>
+  </qp-tabbar>
+  <qp-panel
+    id="ExpenseReceipts"
+    wg-container="ExpenseReceipts_ExpenseReceipts"
+    caption="Add Receipts"
+    auto-repaint="true"
+  >
+    <qp-grid id="gridExpenseReceipts" view.bind="ExpenseReceipts"></qp-grid>
+    <footer>
+      <qp-button
+        id="PXButtonAdd"
+        caption="Add"
+        state.bind="SubmitReceipt"
+      ></qp-button>
+      <qp-button
+        id="PXButtonAddClose"
+        caption="Add & Close"
+        dialog-result="OK"
+      ></qp-button>
+      <qp-button
+        id="PXButtonClose"
+        caption="Close"
+        state.bind="CancelSubmitReceipt"
+        dialog-result="Cancel"
+      ></qp-button>
+    </footer>
+  </qp-panel>
+</template>

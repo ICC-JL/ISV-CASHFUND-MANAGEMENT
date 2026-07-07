@@ -1,0 +1,95 @@
+<template>
+    <qp-tabbar id="tab">
+	<qp-tab id="tab0" caption="General Settings"> 
+         
+<qp-template id="tab0_2" name="1-1"> 
+	<qp-fieldset id="Preference_PXFormView5000" wg-container="Preference_PXFormView5" view.bind="Preference" slot="A" caption="Numbering Settings">
+		<field name="FundNumberingID" config-allow-edit.bind="true"></field>
+		<field name="FundTransactionNumberingID" config-allow-edit.bind="true"></field>
+		<field name="ReplenishmentNumberingID" config-allow-edit.bind="true"></field>
+		<field name="MonthEndNumberingID" config-allow-edit.bind="true"></field>
+	</qp-fieldset>
+	
+	<qp-fieldset id="Preference_PXFormView3000" wg-container="Preference_PXFormView3" view.bind="Preference" slot="A" caption="Default Account Settings">
+		<field name="ReplenishmentLimit" ></field>
+		<field name="FundTransactionLimit" ></field>
+		<field name="PCFAccount" config-allow-edit.bind="true"></field>
+		<field name="PCFSubaccount" config-allow-edit.bind="true"></field>
+		<field name="RVFAccount" config-allow-edit.bind="true"></field>
+		<field name="RVFSubaccount" config-allow-edit.bind="true"></field>
+		<field name="ClearingAccount" config-allow-edit.bind="true"></field>
+		<field name="ClearingSubaccount" config-allow-edit.bind="true"></field>
+	</qp-fieldset>
+	
+	<qp-fieldset id="Preference_PXFormView3100" wg-container="Preference_PXFormView3" view.bind="Preference" slot="A" caption="Liquidation Settings">
+		<field name="NoOfDaysToLiquidate" ></field>
+		<field name="ReclassificationItem" config-allow-edit.bind="true"></field>
+		<field name="LiquidationDateBasedOnWorkCalendar" ></field>
+	</qp-fieldset>
+	
+	<qp-fieldset id="Preference_frmApproval01" wg-container="Preference_frmApproval" view.bind="Preference" slot="B" caption="Approval Settings">
+		<field name="FundsApprovalSetup" ></field>
+		<field name="FundTransactionRequestApproval" ></field>
+		<field name="ReplenishmentRequestApproval" ></field>
+		<field name="MonthEndRequestApproval" ></field>
+	</qp-fieldset>
+	
+	<qp-fieldset id="Preference_frmOther001" wg-container="Preference_frmOther" view.bind="Preference" slot="B" caption="Other Settings">
+		<field name="IsFilterByEmployeeDelegates" ></field>
+		<field name="AllowManualReceipts" ></field>
+		<field name="IsRequireApprovalReplenishment" ></field>
+		<field name="IsRequireApprovalOnFundEstablishment" ></field>
+		<field name="RequireVendorDetails" ></field>
+		<field name="RequireExternalReferenceNbr" ></field>
+		<field name="RequireApprovalOnFundIncreaseCredAdj" ></field>
+		<field name="RequireApprovalOnFundDecreaseDebAdj" ></field>
+		<field name="AutoReleaseMonthEndJournal" ></field>
+		<field name="ValidateAmountReceivedAndReleasedUponLiquidation" ></field>
+		<field name="EnableFundTransactionLimit" ></field>
+		<field name="SetNonStockItemDescriptionAsDefault" ></field>
+	</qp-fieldset>
+</qp-template> 
+    </qp-tab>
+<qp-tab id="tab1" caption="GL ACCOUNTS"> 
+         
+<qp-template id="tab1_1" name="1-1"> 
+	<qp-fieldset id="Preference_tab100" wg-container="Preference_tab" view.bind="Preference" slot="A" caption="GL Account Settings">
+		<field name="UseExpenseAcctFrom" ></field>
+		<field name="CombineExpSub" ></field>
+	</qp-fieldset>
+</qp-template> 
+    </qp-tab>
+<qp-tab id="tab2" caption="Migration Settings"> 
+         
+<qp-template id="tab2_1" name="1-1"> 
+	<qp-fieldset id="Preference_tab20000" wg-container="Preference_tab" view.bind="Preference" slot="A" caption="Cash Fund Management">
+		<field name="IsFundsMigration" ></field>
+	</qp-fieldset>
+</qp-template> 
+    </qp-tab>
+<qp-tab id="tab3" caption="Approval"> 
+         
+<qp-template id="tab3_1" name="1-1"> 
+	<qp-fieldset id="Preference_frmModule0" wg-container="Preference_frmModule" view.bind="Preference" slot="A" caption="Approval Module">
+		<field name="ApprovalModule" ></field>
+	</qp-fieldset>
+	
+	<qp-grid id="FundsApproval_gridFundsRequestApproval" view.bind="FundsApproval" slot="A"></qp-grid>
+	<qp-grid id="FundTransactionApproval_gridFundTransactionRequestApproval" view.bind="FundTransactionApproval" slot="A"></qp-grid>
+	<qp-grid id="ReplenishmentApproval_gridReplenishmentRequestApproval" view.bind="ReplenishmentApproval" slot="A"></qp-grid>
+	<qp-grid id="MonthEndApproval_gridMonthEndRequestApproval" view.bind="MonthEndApproval" slot="A"></qp-grid>
+</qp-template> 
+    </qp-tab>
+<qp-tab id="tab4" caption="Replenishment Report Settings"> 
+         
+<qp-template id="tab4_1" name="1-1"> 
+	<qp-fieldset id="Preference_PXFormView40" wg-container="Preference_PXFormView4" view.bind="Preference" slot="A" caption="Fund Type Settings">
+		<field name="FundType" ></field>
+	</qp-fieldset>
+	
+	<qp-grid id="ReplenishmentReport_PXGrid2" view.bind="ReplenishmentReport" slot="A"></qp-grid>
+</qp-template> 
+    </qp-tab>
+</qp-tabbar>
+	
+</template>

@@ -1,0 +1,21 @@
+<template>
+	<!-- Add custom fieldsets to Financial tab after Intercompany Invoicing fieldset -->
+	<qp-fieldset 
+		after="#tabFinancial #columnSecondFinancialIntercompanyInvoicing"
+		id="groupReferenceDocument"
+		view.bind="CurrentDocument"
+		caption="Reference Document">
+		<field name="UsrATPTEFMSourceType"></field>
+		<field name="UsrATPTEFMSourceRef"></field>
+	</qp-fieldset>
+	
+	<qp-fieldset 
+		after="#tabFinancial #groupReferenceDocument"
+		id="groupTransactionDocument"
+		view.bind="CurrentDocument"
+		caption="Transaction Document">
+		<field name="UsrATPTEFMTranType"></field>
+		<field name="UsrATPTEFMReqType"></field>
+		<field name="UsrATPTEFMLiqNbr"></field>
+	</qp-fieldset>
+</template>

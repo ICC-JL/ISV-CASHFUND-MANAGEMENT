@@ -1,0 +1,15 @@
+<template>
+	<!-- Add new Cash Advance tab after General tab -->
+	<qp-tab after="#mainTabBar #tabGeneral"
+	        id="tabCashAdvance"
+	        caption="Cash Advance">
+		<qp-fieldset id="tabCashAdvance_Settings"
+		             view.bind="CurrentEmployee"
+		             caption="Cash Advance Settings">
+			<field name="UsrATPTEFMAllowableDays"></field>
+			<field name="UsrATPTEFMMaxCAAmt"></field>
+			<field name="UsrATPTEFMOpenCA"></field>
+			<field name="UsrATPTEFMCAUser"></field>
+		</qp-fieldset>
+	</qp-tab>
+</template>

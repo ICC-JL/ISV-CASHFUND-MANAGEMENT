@@ -1,0 +1,246 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{9BC6D61A-5D4B-4D57-BC6B-5E3F9D04377E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CashFundManagement</RootNamespace>
+    <AssemblyName>CashFundManagement</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <WarningLevel>3</WarningLevel>
+    <FileVersion>23.201.0092</FileVersion>
+    <InformationalVersion>23.201.0092</InformationalVersion>
+    <Copyright>Copyright © 2005-2023 Acumatica, Inc. All rights reserved.</Copyright>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>TRACE;DEBUG;Version23R2</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PX.Common">
+      <HintPath>..\References\23R2\PX.Common.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Common.Std">
+      <HintPath>..\References\23R2\PX.Common.Std.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.CS.Contracts">
+      <HintPath>..\References\23R2\PX.CS.Contracts.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Data">
+      <HintPath>..\References\23R2\PX.Data.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Data.BQL.Fluent">
+      <HintPath>..\References\23R2\PX.Data.BQL.Fluent.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.DbServices">
+      <HintPath>..\References\23R2\PX.DbServices.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="PX.Objects">
+      <HintPath>..\References\23R2\PX.Objects.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Attributes\ATPTEFMAccountGroupExt.cs" />
+    <Compile Include="Attributes\ATPTEFMApprovalModuleAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMBudgetDistributionMethodAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMCARequestClassItemSelector.cs" />
+    <Compile Include="Attributes\ATPTEFMCashAdvanceStatusAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMDuplicateORNbr.cs" />
+    <Compile Include="Attributes\ATPTEFMExpenseClaimStatusAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMExpenseReceiptStatusAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMExpenseTypeAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMFeatureBudgetModuleListAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMFundStatusAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMFundTransactionCashAdvanceStatusAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMFundTransactionStepAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMFundTransactionTypeAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMFundTypeAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMLiquidationNbrAutonumberAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMLiquidationRuleAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMModuleTypeAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMMonthEndStatusAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMReplenishmentStatusAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMReplenishmentStepAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMReplenishmentStringListAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMReqClassAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMRFPRefNbrAutonumberAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMSourceTranTypeAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMSourceTypeAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMTranTypeAttribute.cs" />
+    <Compile Include="Attributes\ATPTEFMVendorSelectorAttribute.cs" />
+    <Compile Include="Attributes\Base\ATPTEFMBaseStatus.cs" />
+    <Compile Include="Attributes\ATPTEFMAPVendorRefNbrAttribute.cs" />
+    <Compile Include="BLC\ATPTEFM2023EnhancementsPreference.cs" />
+    <Compile Include="BLC\ATPTEFMBudgetEntry.cs" />
+    <Compile Include="BLC\ATPTEFMCAReclassProcess.cs" />
+    <Compile Include="BLC\ATPTEFMCASetupMaint.cs" />
+    <Compile Include="BLC\ATPTEFMCashAdvanceEntry.cs" />
+    <Compile Include="BLC\ATPTEFMCashAdvanceMaint.cs" />
+    <Compile Include="BLC\ATPTEFMCashFundDataFixMaint.cs" />
+    <Compile Include="BLC\ATPTEFMEnableDisableMaint.cs" />
+    <Compile Include="BLC\ATPTEFMFeaturesMaint.cs" />
+    <Compile Include="BLC\ATPTEFMFundMaint.cs" />
+    <Compile Include="BLC\ATPTEFMFundRequestReclassifyProcess.cs" />
+    <Compile Include="BLC\ATPTEFMFundsMaint.cs" />
+    <Compile Include="BLC\ATPTEFMFundTransactionEntry.cs" />
+    <Compile Include="BLC\ATPTEFMFundTransactionMaint.cs" />
+    <Compile Include="BLC\ATPTEFMFundTransactionPreference.cs" />
+    <Compile Include="BLC\ATPTEFMMonthEndEntry.cs" />
+    <Compile Include="BLC\ATPTEFMProjectBudgetEntry.cs" />
+    <Compile Include="BLC\ATPTEFMProjectBudgetProcess.cs" />
+    <Compile Include="BLC\ATPTEFMReplenishmentEntry.cs" />
+    <Compile Include="BLC\ATPTEFMReplenishmentMaint.cs" />
+    <Compile Include="BLC\ATPTEFMReqClassMaint.cs" />
+    <Compile Include="BLC\ATPTEFMSimpleGraphs.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMCashAdvanceEntry_ApprovalWorkflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMCashAdvanceEntry_Workflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMFundMaint_ApprovalWorkflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMFundMaint_Workflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMFundTransactionEntry_ApprovalWorkflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMFundTransactionEntry_Workflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMMonthEndEntry_ApprovalWorkflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMMonthEndEntry_Workflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMReplenishmentEntry_ApprovalWorkflow.cs" />
+    <Compile Include="BLC\Workflow\ATPTEFMReplenishmentEntry_Workflow.cs" />
+    <Compile Include="Classes\ATPTEFMBudgetLibrary.cs" />
+    <Compile Include="Classes\ATPTEFMProjectBudgetLibrary.cs" />
+    <Compile Include="DAC\ATPTEFMBudgetHistory.cs" />
+    <Compile Include="DAC\ATPTEFMCAReceiptDetail.cs" />
+    <Compile Include="DAC\ATPTEFMCARequestDetail.cs" />
+    <Compile Include="DAC\ATPTEFMCashAdvance.cs" />
+    <Compile Include="DAC\ATPTEFMCashFundDataFix.cs" />
+    <Compile Include="DAC\ATPTEFMFund.cs" />
+    <Compile Include="DAC\ATPTEFMFundEstablishment.cs" />
+    <Compile Include="DAC\ATPTEFMFundTransaction.cs" />
+    <Compile Include="DAC\ATPTEFMFundTransactionDetail.cs" />
+    <Compile Include="DAC\ATPTEFMFundTransactionHistoryView.cs" />
+    <Compile Include="DAC\ATPTEFMFundTransactionReceiptDetail.cs" />
+    <Compile Include="DAC\ATPTEFMFundTransactionReclassficationReceiptDetail.cs" />
+    <Compile Include="DAC\ATPTEFMMonthEnd.cs" />
+    <Compile Include="DAC\ATPTEFMMonthEndDetail.cs" />
+    <Compile Include="DAC\ATPTEFMProjectBudget.cs" />
+    <Compile Include="DAC\ATPTEFMProjectBudgetHistory.cs" />
+    <Compile Include="DAC\ATPTEFMProjectBudgetLine.cs" />
+    <Compile Include="DAC\ATPTEFMProjectBudgetLineSummary.cs" />
+    <Compile Include="DAC\ATPTEFMReplenishment.cs" />
+    <Compile Include="DAC\ATPTEFMReplenishmentDetail.cs" />
+    <Compile Include="DAC\ATPTEFMReplenishmentTaxDetail.cs" />
+    <Compile Include="DAC\Base\ATPTEFMAudit.cs" />
+    <Compile Include="DAC\Base\ATPTEFMBase.cs" />
+    <Compile Include="DAC\Setup\ATPTEFM2023R2Enhancements.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMCASetup.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMCASetupApproval.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMEnableDisable.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMFeatures.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMFundsApprovalSetup.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMFundTransactionSetupApproval.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMMonthEndSetupApproval.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMReplenishmentReportSettings.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMReplenishmentSetupApproval.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMRepSetupApproval.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMReqClass.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMReqClassItems.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMSetup.cs" />
+    <Compile Include="DAC\Setup\ATPTEFMSetupEmployeeCA.cs" />
+    <Compile Include="DAC\Unbound\ATPTEFMBudget.cs" />
+    <Compile Include="DAC\Unbound\ATPTEFMPBudget.cs" />
+    <Compile Include="Extensions\Attribute\ATPTEFMSubAccountMaskExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMAPInvoiceEntryExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMAPPaymentEntryExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMAPReleaseProcessExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMCashAdvanceMaintExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMCashTransferEntryExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMEmployeeMaintExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMEPApprovalMapMaintExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMEPReleaseProcessExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMEPSetupMaintExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMExpenseClaimDetailEntryExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMExpenseClaimDetailMaintExt.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMExpenseClaimEntryExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMFundsMaintExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMFundTransactionMaintExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMPostGraphExt.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMProjectEntryExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMReplenishmentMaintExtension.cs" />
+    <Compile Include="Extensions\BLC\ATPTEFMVendorMaintExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMAPInvoiceExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMAPRegisterExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMAPSetupExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMAPTranExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMCASetupExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMCashAdvanceExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMEPApprovalExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMEPAssignmentExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMEPEmployeeExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMEPExpenseClaimDetailsExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMEPExpenseClaimExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMEPSetupExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMFundExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMFundTransactionExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMInventoryItemExtension.cs" />
+    <Compile Include="Extensions\DAC\ATPTEFMReplenishmentExtension.cs" />
+    <Compile Include="Helper\ATPTEFMDataFixHelper.cs" />
+    <Compile Include="Helper\ATPTEFMFundHistoryPaginationHelper.cs" />
+    <Compile Include="Helper\ATPTEFMFundTransactionHelper.cs" />
+    <Compile Include="Helper\ATPTEFMHelper.cs" />
+    <Compile Include="Helper\ATPTEFMModuleEnabler.cs" />
+    <Compile Include="Helper\ATPTEFMPrefetchSetup.cs" />
+    <Compile Include="Helper\ATPTEFMShared.cs" />
+    <Compile Include="Messages\ATPTEFMMessages.cs" />
+    <Compile Include="MethodExtensions\ATPTEFMBudgetExtension.cs" />
+    <Compile Include="MethodExtensions\ATPTEFMCommonExtension.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Bcl.AsyncInterfaces">
+      <Version>5.0.0</Version>
+    </PackageReference>
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe">
+      <Version>6.0.0</Version>
+    </PackageReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

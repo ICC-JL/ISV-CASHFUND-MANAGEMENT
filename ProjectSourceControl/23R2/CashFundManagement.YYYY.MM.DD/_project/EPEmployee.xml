@@ -1,0 +1,6 @@
+﻿<Table TableName="EPEmployee">
+    <Column TableName="EPEmployee" ColumnName="UsrATPTEFMAllowableDays" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPEmployee" ColumnName="UsrATPTEFMMaxCAAmt" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPEmployee" ColumnName="UsrATPTEFMOpenCA" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPEmployee" ColumnName="UsrATPTEFMCAUser" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

@@ -1,0 +1,139 @@
+<template>
+  <qp-template id="form_30" name="1-1-1" class="equal-height">
+    <qp-fieldset id="CashAdvances_form00" slot="A" view.bind="CashAdvances" wg-container="CashAdvances_form">
+      <field name="ReqClassID"></field>
+      <field name="CashAdvanceNbr"></field>
+      <field name="Status"></field>
+      <field name="Hold"></field>
+      <field name="Approved"></field>
+      <field name="Reclassified"></field>
+      <field name="IsOverbudget"></field>
+      <field name="HasInitialBudget"></field>
+      <field name="IsImported"></field>
+      <field name="Date"></field>
+      <field name="FinPeriodID"></field>
+      <field name="RequestApproval"></field>
+    </qp-fieldset>
+    <qp-fieldset id="CashAdvances_form11" slot="B" view.bind="CashAdvances" wg-container="CashAdvances_form">
+      <field name="BranchID"></field>
+      <field name="RequestedByID"></field>
+      <field name="DepartmentID"></field>
+      <field name="DateOfUse"></field>
+      <field name="InitialLiqDate"></field>
+      <field name="LiqDate"></field>
+      <field name="CuryID" control-type="qp-currency" view.bind="_ATPTEFMCashAdvance_CurrencyInfo_"></field>
+      <field name="Descr" config-rows.bind="3"></field>
+    </qp-fieldset>
+    <qp-fieldset id="CashAdvances_form22"
+        slot="C"
+        view.bind="CashAdvances"
+        class="highlights-section"
+        wg-container="CashAdvances_form">
+      <field name="CuryRequestedAmount"></field>
+      <field name="CuryActualSpentAmount"></field>
+      <field name="CuryWhtTaxAmount"></field>
+      <field name="RefundAmount"></field>
+      <field name="CuryChangeAmount"></field>
+    </qp-fieldset>
+  </qp-template>
+  <qp-tabbar id="tab">
+    <qp-tab id="tab0" caption="Request Details">
+      <qp-grid id="CashAdvanceRequestLines_PXGrid1" view.bind="CashAdvanceRequestLines"></qp-grid>
+    </qp-tab>
+    <qp-tab id="tab1" caption="Receipts">
+      <qp-grid id="CashAdvanceReceiptLines_PXGrid2" view.bind="CashAdvanceReceiptLines">
+        <toolbar>
+          <qp-button state.bind="LoadRequest" caption="Load"></qp-button>
+        </toolbar>
+      </qp-grid>
+    </qp-tab>
+    <qp-tab id="tab2" caption="Budget Details" if.bind="CashAdvances.BudgetEnabled.value==true">
+      <qp-grid id="Budget_BudgetGrid" view.bind="Budget"></qp-grid>
+    </qp-tab>
+    <qp-tab id="tab3" caption="Project Budget Details" if.bind="CashAdvances.ProjectBudgetEnabled.value==true">
+      <qp-grid id="ProjectBudget_grdRLProjectBudget" view.bind="ProjectBudget"></qp-grid>
+    </qp-tab>
+    <qp-tab id="tab4" caption="Approval Details">
+      <qp-grid id="Approval_gridApproval" view.bind="Approval"></qp-grid>
+    </qp-tab>
+    <qp-tab id="tab5" caption="Financial Details">
+      <qp-template id="Financial-form" name="1-1">
+        <div id="divColumnA-Financial" slot="A">
+          <qp-fieldset id="CurrentCashAdvance_tab5000"
+              view.bind="CurrentCashAdvance"
+              caption="Link to AP"
+              wg-container="CurrentCashAdvance_tab">
+            <field name="BranchID"></field>
+          </qp-fieldset>
+          <qp-fieldset id="CurrentCashAdvance_tab5010"
+              view.bind="CurrentCashAdvance"
+              caption="Tax"
+              wg-container="CurrentCashAdvance_tab">
+            <field name="TaxZoneID"></field>
+          </qp-fieldset>
+          <qp-fieldset id="CurrentCashAdvance_tab5020"
+              view.bind="CurrentCashAdvance"
+              caption="Link to Bills and Adjustments"
+              wg-container="CurrentCashAdvance_tab">
+            <field name="BillType"></field>
+            <field name="BillRefNbr"></field>
+            <field name="BillBalance"></field>
+            <field name="BillStatus"></field>
+          </qp-fieldset>
+          <qp-fieldset id="CurrentCashAdvance_tab5030"
+              view.bind="CurrentCashAdvance"
+              caption="Link to Checks and Payments"
+              wg-container="CurrentCashAdvance_tab">
+            <field name="PmtType"></field>
+            <field name="PmtRefNbr"></field>
+            <field name="PmtBalance"></field>
+            <field name="PmtStatus"></field>
+          </qp-fieldset>
+        </div>
+        <div id="divColumnB-Financial" slot="B">
+          <qp-fieldset id="CurrentCashAdvance_tab5040"
+              view.bind="CurrentCashAdvance"
+              caption="Link to Prepayment"
+              wg-container="CurrentCashAdvance_tab">
+            <field name="PpmType"></field>
+            <field name="PpmRefNbr"></field>
+            <field name="PpmBalance"></field>
+            <field name="PpmStatus"></field>
+          </qp-fieldset>
+          <qp-fieldset id="CurrentCashAdvance_tab5050"
+              view.bind="CurrentCashAdvance"
+              caption="Link to Reclassification"
+              wg-container="CurrentCashAdvance_tab">
+            <field name="ReclassifyType"></field>
+            <field name="ReclassifiedInvoiceRefNbr"></field>
+            <field name="ReclassifyBalance"></field>
+            <field name="ReclassifyStatus"></field>
+          </qp-fieldset>
+          <qp-fieldset id="CurrentCashAdvance_tab5060"
+              view.bind="CurrentCashAdvance"
+              caption="Link to Vendor Refund"
+              wg-container="CurrentCashAdvance_tab">
+            <field name="VendorRefundType"></field>
+            <field name="VendorRefundRefNbr"></field>
+            <field name="VendorRefundBalance"></field>
+            <field name="VendorRefundStatus"></field>
+          </qp-fieldset>
+        </div>
+      </qp-template>
+    </qp-tab>
+    <qp-tab id="tab6" caption="Voided Documents">
+      <qp-grid id="VoidedDocuments_gridVoided" view.bind="VoidedDocuments"></qp-grid>
+    </qp-tab>
+  </qp-tabbar>
+  <qp-panel id="ReceiptsForSubmit"
+      caption="Add Receipt"
+      auto-repaint="true"
+      wg-container="ReceiptsForSubmit_ReceiptsForSubmit">
+    <qp-grid id="ReceiptsForSubmit_gridReceiptsForSubmit" view.bind="ReceiptsForSubmit"></qp-grid>
+    <footer>
+      <qp-button id="PXButtonAdd" state.bind="SubmitReceipt" caption="Add"></qp-button>
+      <qp-button id="PXButtonAddClose" dialog-result="OK" caption="Add & Close"></qp-button>
+      <qp-button id="PXButtonClose" dialog-result="Cancel" state.bind="CancelSubmitReceipt" caption="Close"></qp-button>
+    </footer>
+  </qp-panel>
+</template>

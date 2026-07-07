@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "QHKEg0rKauk=",
+  "success": true,
+  "projectFilePath": "C:\\Users\\jhonl\\source\\repos\\ISV-CASHFUND-MANAGEMENT\\CashFundEFFBudgetConnector\\CashFundEFFBudgetConnector-25R2.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\jhonl\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\8.0.0\\microsoft.bcl.asyncinterfaces.8.0.0.nupkg.sha512",
+    "C:\\Users\\jhonl\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\6.0.0\\system.runtime.compilerservices.unsafe.6.0.0.nupkg.sha512",
+    "C:\\Users\\jhonl\\.nuget\\packages\\system.threading.tasks.extensions\\4.5.4\\system.threading.tasks.extensions.4.5.4.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,83 @@
+﻿<Page path="~/pages/ep/ep301020.aspx" ControlId="23" pageSource="zRtrc9y28bMzk//AuU7yzXq5dmJbcivdSYkmlnS9k+20nY4GR0InRDyCIUBJlw/97V28SAAEHyfJmXommROw3Bd2F7sLYP+7v0dTtMTRR5QtS/hxMBr/ZRSdIcZxISZOSApj/92uR9j2CS1WE8wRSbdWcngUHZacHt/hjH8hBS7zgxEvSjz69psI/n1GKUkQxzP8e4kZPxhdo5ThUTSmiUZ/PH21s7uzt7OFWP6wFbNRdJrd4IJwdjASJK8MwCi6JFx88Snj4kcimR9F33349ptvv9kHYRSfl+scR59JwUuUThG/GSCBRgEcvBvTjIMo0enkYBTD713BqxyapijGP9M0wYWYzG8m81FUlBkCqea4uANEH5TQ+/nDu+mvE8TRnJZFjKPjDC1SfMh5QRYlx0yrSBJJWIWFKSzAPCMLIemlhPpCEiHF7s7Od6ADkO4crWBy+uvWxeI3HHO2dTzdOn7IccbwOEVES3ec8WI9iqYFWaFi/Znge1jfeppV3G577ML4/raliw8tqtlrV81Jp2bECgh+JKZr+KOhgZoZo6I5XwuN/PGSZAl+eBeBNjzNiG/O8GqBC09ORVr8G6OcE5pV+j1RxniJFqcCq8QE9hxzckf4GsZIjDgtzEKcU44bg8KKWWP0aCo9ojnxoeZm/xKv8hScwxqrlfQRrWnJZ2WKfeXMOSr4mKblKtNYfQTbHoYggTlOwXhoIVfB/GEpbjwJLssJwWniaFgAzskfoE/m6nJ3tA2UX7x4UTkEviQrfJwQZUQ40VYrZrqIOWBjuloRPr6BoCU86bIONvY/m489l485Xq5gbSAm3Go2TjOxWLRYn3bK7ICF2IgO05TeC/kG8fVK8vXVlz4oeJB9vShglXSNcbcybKiGu3bL/df29ehg66hAWXzTzVQNsyFLrz1TLWg+ofeZJF3/udtFG9aGl+ABKtgnVXR5+hrDBr3AKTPR7vVO/rDRup+XIipabjcui/UlqOpwxTt9vAb7QvjNJXrALfK1kbIH9npJoYdLylH6dBWe4WJpts/wt02ViHgWFrgnCA7XUpONS/zAbSZQIdem28htqPktycS30kLgzzLPC8yY/NNYj8dKmJPK4j26Ajl/4EcouxVCGiN3nM6b87bXBr1YJQ1M7OjRghaQNTC1u5/TzFPV/ra3SWpDNymEk1fMIdHhU5ThVLINK/EvQPgpFwnoIbtt6NRPB5S6fsHr5reClvggi3F6VHJOpdbV3xp2FFlyHsYxznkNOUd3uIKz5XMTosCim5QmzJFZf6F/lqMC9DrSnmeQ7jZiRUveEfQshase2HvV9OO+iDU/U5liQVOVJ/wKAw2PsMkv9BJqs/boCa85GE1oBExF9whSUk6jkuGI3+CI5Tgm1wTKA44eoj9AZRGkmBFWKURU4BiTnLNosY4SfI3KlP8t4J2+2bWbXs12bXn6d0BTermUYbDGykg8ajJqmI1vHASldDnDDEQ4GP1TBB2lGPlTbKQoS1Sp4KDRM256HQ4KFieeqXfyck4NK+KX58+1qlyPrp13aP3xqr3++Kmz/oCNXweIRTi8b1p6/IzJ8oYHC5GyED7p1CPRRNmddglBxk5wbW2dcrxi4Z0DkheYNL7glnRDvX2Yxz+Pv/9U0DLXEbcSOKp0orMIk0d4G6MIbxPM4q5tsYYJJpEC4xlNgJsz0D35SLK6tH715jWkVNUyvn1T1zGRWNU3chNzGByefLx4YX3WyDv+wdddQsnpsDw2gz80KTnlHU4+XZx10ZHTQTpqBecuwd0di2CfQoZD2qqL+nUnkqBPGXBMWW8eW8P1a/PHAesmcJoSaAru0Effhe3lYXf3/0XBxw+D9FuB9av37UD1XpJ8SIGiofpVujfygswAjdbwCD5Q0TxezyCc+nyIbLzmvSWDdzcWgUb081Rv7up42mzisStD8zS7plehzSVefyRC8d0RVKOe4evzRTGg12IAQ2r1KA2s3+WOgOLuBdUwp1VLSWwdj6N3CfPdhZSBqCmJVjZIDiXUTcNLNhSWcdHj7qnkLKjNmNCxvYOD/pU2EAF6fh/Lo++1R1ThJ622v0GiwfrqYzc96apOcTJFJBGlt0OtHgwqqZtepeAgvTEtclGEmz5TtZr1cLg72FB0NxctSZmIBOGcTOZYhlo44QL1Mwb1UYzE+JDErZvH8Q2Ob4/og+ZQJOFdNqDmN1t8j8Rhnhf0DneSqWF8UlWxfx1sTnRSNn92tgFnWJzJPDfpGRgkYt1C1zBP0q900CHr2OHJj7BqKC03Nmr4JlLeMNCdzc4gq9i+zaECCgTItm2xnQcnZkoexiiNRUXSw0UN9giqTcnHkHQse486PMANNPCIpRc1OombeuhbfslrpL+uSsmNluFkfixOk9ciDft02qURH3LTxRD542SdoRWJvUUxmOXxYueq+JCDzqCiCWF5itaq+BVpoTy05Lg4WgOsRD3MmJxAIfg+ImkqnL+b5xqqdSd+hNGcQAGfxQQ124P9ZpMh+WXdfXhMR2MDXcU3t0NUNUBRXZ4+LDEtGacr0ScbeLrLtuxPNk1hNuTqI1V5ySO4sz9tyaCHsenUS4dxTMuM9xyFNmA9UflTWJiXi0HkNdwzyD5HKWaDJPchn0VuibRXahuqRea2Yt/vcDbzOTdgnK7ERSOvBpKDn/KUogQXVSPxrdNI3PvhtbJwsloa0AYtGa/VrGFeNAQusnRdhfSioPfsouSMJNgJUKr9+322YPn78PFf8JgldLyhJuzmsn2w6/ab1SGnVsiwDvOQM65gt7z1iAuYmIHhJRNyfS2wh7rfFQ89PDb5/dPOwKRNNek3WmIgrpB0wCl6pRUrOb/urgS6zcIzD+sEzHKInwqSSFaX8KPpUs4ZiWn/Oaco4t4VzdiUMqLTe5rXy1+fnjRvdihk9X2OV293dox1AnsiPAil19pQC3RGsoqr1ztOH/UjvsOpPPhhVq9yRu+F7JW37+ibGGZ+WwPUeLZDiPaVpEeosL7V0tcjL/bnGBXxTduFCw2D7nAXxP62j9iM2OSVvLao1ZLKGf8kunZ+Cazs3ubdQqAmveKidbNwpOvDMpMXwkRIOkzJEixmJlZzNByHdhh5O1M0kZ+O6qlozmk2wUkJKwQ8PZeIJkF5Im/AztWVuKUDJdBos6+mOEtItpRFvsXBGIK5PNEHjPCXzpk3xD0DCy0Y/iq4jx8gIvKvglq0QwnjJEbpI/Dvbzedbl9tUZGJzya49YR9E9xFgaiykcMkORdHEnrTkGMTKFo5djaSihU3WPjRzz/AdohWsVlsjghqOggwX0iW0Htr86rzSJ+gSUHsnauGqPOY5v7qJjTiDhPY5yg6ItJQ5cUCMaGuJ89wDrzxC/BNcXei0oJu6YF/wQYF66t3ePbv738vKX/fuDilhv+z9RmlJeQVDAr58zJN+87tLYOqL5nkWdrcZWfgZ7iYE/i0ShT1mLrFoKaszfGJtxHbKmMbe1f3Pl4t/PtjHVfLvHSmy6y9U7DwtbZY97i8+3VmMJQ92RZorqs0TDCQNA23RdW8ttsTGxnlo++AOAmcYWLAMaaTxHnp2mkGslVXaFJ8zd9FkDS9jzjN1a/OrL0tc+tc+GYcOwnEMXtMXarrbZdL7L0hzVVoM32qNDskJtdBvg/UJdvcc/SRSGEuIlxdQd3Oxd39IZvD47CL22fPg/8LLW6Xoig/fV6Gk6P1V1VIA//zqeSiIMuL+0z15byzpWi+zmJ/7BnFUi8xngOhiezSD8Ve2OmZaisTAZ0WuhPRGw+GcjLDiIkT0U0jwmDVMQbJnep1STMesmjPIhhs63+mjcw5zv9MeuMCw1ol5nnR8xG2c+xuuEYC3A7auX+4mW1zdtMUY3/bv0E6LOF2vapGbwZC1+1z8cs4Ufim/cHoWBQ2kYHyL+CrPP8jRUmd1PD6Ur76TIcgdc4+RQVayRaQkGuM0vQIxbcvvcrBmdP3n+X9F9ExFmyoKZE4vAyeUugU541s+AAx54spZVyYo3qvOmrc/V/wTHF+cdt8QlBNqgkdfmaYyWRahx/d4JbpnpZJZJ2B15T1n9OO5WjmcC0vI+28pV37MgPe13exZaoXCeWA86h3j1bf9kg+95jbzz06blJHY8bkhRVVw0aSjlfp9TVru/QQKG6c10yNG/0teEIVVmTqgj4Gh/MWfN2z7dDxbv11rL+36wWvR0tCen12rGMN6QauU7QfWQbLpU79mtcRA15P1JJbbxUchwu+Hbn4Jfh+ovVpRDcZ47pBUmay+USii1pDY26Ho9mID72iaA3Vla5FRtJa6TXfPfz4Psp1d/5dhBYMrJPj95Eq6/Z+qOq6t29FYacYqEK/oRdVBB0A7xVWaBNQUVAdlHnbgi2IutygsT9lW0gpw2q93cU7XNCCj6prCy2P2nv16wfXgAyPeY3SeO4eUn1bwA8dttnZw7M9Wfe6SF4TKXDt0LvPZLfM8b0pP1vCkAqGDpx/CNt/au7d67DfhS8zWmCDm4kOw1LeRWAd/MQ3t13fBS6kt6aBzWigxxNyF+mnlTlKRAtJ2Ev+oP73Wv0HPguB6iUSred3USFCvNOUaYt7trmKeBqMfgbQj3/wwQfNtsK8IcGWkOsSMUBuINYOBBFxSbKXKnbJU/s63QW9SSUOeZr2Pw==">
+    <PXFormView ID="form" ParentId="phF_form" TypeFullName="PX.Web.UI.PXFormView">
+        <Children Key="Template">
+            <AddItem>
+                <PXDropDown TypeFullName="PX.Web.UI.PXDropDown">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="ddATPTEFMTranType" />
+                    <Prop Key="DataField" Value="UsrATPTEFMTranType" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXDropDown>
+            </AddItem>
+            <AddItem>
+                <PXDropDown TypeFullName="PX.Web.UI.PXDropDown">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="selATPTEFMFundType" />
+                    <Prop Key="DataField" Value="UsrATPTEFMFundType" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXDropDown>
+            </AddItem>
+            <AddItem>
+                <PXDropDown TypeFullName="PX.Web.UI.PXDropDown">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="ddATPTEFMReqType" />
+                    <Prop Key="DataField" Value="UsrATPTEFMReqType" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXDropDown>
+            </AddItem>
+            <AddItem>
+                <PXSelector TypeFullName="PX.Web.UI.PXSelector">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="selATPTEFMReqClass" />
+                    <Prop Key="DataField" Value="UsrATPTEFMReqClass" />
+                    <Prop Key="AutoRefresh" Value="True" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXSelector>
+            </AddItem>
+            <PXSelector DataField="ClaimDetailCD" OriginalIndex="1" />
+            <AddItem>
+                <PXSelector TypeFullName="PX.Web.UI.PXSelector">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="selATPTEFMReqRef" />
+                    <Prop Key="DataField" Value="UsrATPTEFMReqRef" />
+                    <Prop Key="AutoRefresh" Value="True" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXSelector>
+            </AddItem>
+            <AddItem>
+                <PXSelector TypeFullName="PX.Web.UI.PXSelector">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="edATPTEFMRequestRef" />
+                    <Prop Key="DataField" Value="UsrATPTEFMRequestRefNbr" />
+                    <Prop Key="CommitChanges" Value="True" />
+                </PXSelector>
+            </AddItem>
+            <PXSegmentMask DataField="InventoryID" OriginalIndex="3" />
+            <AddItem>
+                <PXSegmentMask TypeFullName="PX.Web.UI.PXSegmentMask">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="edUsrATPTVendorID" />
+                    <Prop Key="DataField" Value="UsrATPTVendorID" />
+                    <Prop Key="CommitChanges" Value="True" />
+                    <Prop Key="AutoRefresh" Value="True" />
+                </PXSegmentMask>
+            </AddItem>
+            <PXLayoutRule OriginalIndex="8" />
+        </Children>
+    </PXFormView>
+    <PXTabItem Text="Details" ParentId="phG_Tabs_Items#0" TypeFullName="PX.Web.UI.PXTabItem">
+        <Children Key="Template">
+            <AddItem>
+                <PXNumberEdit TypeFullName="PX.Web.UI.PXNumberEdit">
+                    <Prop Key="Virtual:ApplyStylesheetSkin" />
+                    <Prop Key="ID" Value="edATPTEFMFundReturn" />
+                    <Prop Key="DataField" Value="UsrATPTEFMFundReturn" />
+                </PXNumberEdit>
+            </AddItem>
+            <PXLayoutRule ID="PXLayoutInfo" OriginalIndex="23" />
+        </Children>
+    </PXTabItem>
+    <PXSegmentMask DataField="InventoryID" ParentId="phF_form_edInventoryID" TypeFullName="PX.Web.UI.PXSegmentMask">
+        <Prop Key="AutoRefresh" Value="True" />
+    </PXSegmentMask>
+</Page>

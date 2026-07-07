@@ -1,0 +1,19 @@
+<template>
+	<!-- Slot B - Expense Claim Settings fieldset -->
+	<!-- All custom fields go after RequireRefNbrInExpenseReceipts -->
+	
+	<!-- Raise Error on Duplicate Ref Nbr - after RequireRefNbrInExpenseReceipts -->
+	<field after="#formSetup06 [name='RequireRefNbrInExpenseReceipts']"
+	       name="UsrATPTEFMRaiseErrorOnDuplicateRefNbr">
+	</field>
+	
+	<!-- Require Approval for RFP Bill - after AllowMixedTaxSettingInClaims -->
+	<field after="#formSetup06 [name='AllowMixedTaxSettingInClaims']"
+	       name="UsrATPTEFMIsRequireApprovalRFPBill">
+	</field>
+	
+	<!-- Use Financial Tab Tax Zone for Details - after UsrATPTEFMIsRequireApprovalRFPBill -->
+	<field after="#formSetup06 [name='UsrATPTEFMIsRequireApprovalRFPBill']"
+	       name="UsrATPTEFMUseFinancialTabTaxZoneForDetails">
+	</field>
+</template>

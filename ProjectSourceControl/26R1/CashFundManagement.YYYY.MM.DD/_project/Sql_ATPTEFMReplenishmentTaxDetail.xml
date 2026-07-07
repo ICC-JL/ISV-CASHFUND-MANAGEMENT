@@ -1,0 +1,28 @@
+﻿<Sql TableName="ATPTEFMReplenishmentTaxDetail" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMReplenishmentTaxDetail">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ReplenishmentTaxDetailID" type="Int" identity="true" />
+  <col name="ReplenishmentNbr" type="NVarChar(15)" />
+  <col name="TaxID" type="NVarChar(60)" nullable="true" />
+  <col name="TaxRate" type="Decimal(19,6)" nullable="true" />
+  <col name="TaxableAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="TaxAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="IsImported" type="Bit" nullable="true" />
+  <index name="ATPTEFMReplenishmentTaxDetail_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMReplenishmentTaxDetail_pk" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ReplenishmentTaxDetailID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

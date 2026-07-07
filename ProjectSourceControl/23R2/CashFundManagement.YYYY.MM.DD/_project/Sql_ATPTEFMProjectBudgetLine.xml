@@ -1,0 +1,34 @@
+﻿<Sql TableName="ATPTEFMProjectBudgetLine" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMProjectBudgetLine">
+  <col name="RLProjectBudgetLineDetailID" type="Int" identity="true" />
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="FinYear" type="NVarChar(4)" nullable="true" />
+  <col name="LedgerID" type="Int" nullable="true" />
+  <col name="ProjectID" type="Int" nullable="true" />
+  <col name="FinPeriodID" type="NVarChar(6)" />
+  <col name="ProjectTaskID" type="Int" />
+  <col name="CostCodeID" type="Int" />
+  <col name="Amount" type="Decimal(19,4)" />
+  <col name="ReleasedAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="Released" type="Bit" default="Zero" />
+  <col name="WasReleased" type="Bit" default="Zero" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByScreenID" type="Char(8)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedByScreenID" type="Char(8)" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="AccountGroupID" type="Int" />
+  <col name="InventoryID" type="Int" nullable="true"/>
+  <index name="ATPTEFMProjectBudgetLine_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="PK__ATPTEFMP__0D1DF97BEC42847A" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="RLProjectBudgetLineDetailID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

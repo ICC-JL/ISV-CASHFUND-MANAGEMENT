@@ -1,0 +1,20 @@
+﻿<Table TableName="EPExpenseClaimDetails">
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMTranType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMReqType" ColumnType="string" AllowNull="True" MaxLength="3" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMReqRef" ColumnType="string" AllowNull="True" MaxLength="20" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMReqClass" ColumnType="string" AllowNull="True" MaxLength="10" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMMonthEnd" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMFundReturn" ColumnType="decimal" AllowNull="True" DecimalPrecision="6" DecimalLength="19" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMRequestRefNbr" ColumnType="string" AllowNull="True" MaxLength="15" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMFundType" ColumnType="string" AllowNull="True" MaxLength="1" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTVendorID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMIsImported" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTVendID" ColumnType="string" AllowNull="True" MaxLength="30" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTVendName" ColumnType="string" AllowNull="True" MaxLength="100" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTVendTIN" ColumnType="string" AllowNull="True" MaxLength="50" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTAddress" ColumnType="string" AllowNull="True" MaxLength="100" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMDetailVendorID" ColumnType="int" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMIsReclassifyDoc" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMATCCode" ColumnType="string" AllowNull="True" MaxLength="30" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+    <Column TableName="EPExpenseClaimDetails" ColumnName="UsrATPTEFMIsUnreplenish" ColumnType="bool" AllowNull="True" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

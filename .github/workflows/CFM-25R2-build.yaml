@@ -1,0 +1,126 @@
+name: CFM-25R2-build
+
+on:
+  workflow_dispatch:
+
+env:
+  buildFolder: '..\BUILDS-2025R2'
+  buildFolderName: "BUILDS-2025R2"
+  artifactName: "CFM-Artifact.zip"
+
+jobs:
+  build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+      actions: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 50
+
+      - name: MKDIR PACKAGES
+        run: |
+          mkdir cfm-artifact/PACKAGES/CFM
+          mkdir cfm-artifact/PACKAGES/CFM-Tax
+
+      - name: Add msbuild to PATH
+        uses: microsoft/setup-msbuild@v2
+
+      - name: Stamp build info into AssemblyInfo
+        shell: pwsh
+        run: |
+          .\.github\scripts\Stamp-BuildInfo.ps1 -CsprojPaths CashFundManagement\CashFundManagement-25R2.csproj,CashFundPhilippineTax\CashFundPhilippineTax-25R2.csproj -AcuVersion 25R2
+
+      - name: Build Projects
+        run: |
+          msbuild CashFundManagement/CashFundManagement-25R2.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+          msbuild CashFundPhilippineTax/CashFundPhilippineTax-25R2.csproj -t:rebuild -p:OutputPath=${{env.buildFolder}} -p:PostBuildEvent=
+
+      - name: COPY Packages
+        shell: cmd
+        run: |
+          XCOPY "ProjectSourceControl\25R2\CashFundManagement.YYYY.MM.DD" "cfm-artifact\PACKAGES\CFM" /E /D /C /Y
+          XCOPY "ProjectSourceControl\25R2\CashFundPhilippineTax.YYYY.MM.DD" "cfm-artifact\PACKAGES\CFM-Tax" /E /D /C /Y
+
+      - name: Update DLLs in Packages
+        shell: cmd
+        run: |
+          copy /Y "%buildFolderName%\CashFundManagement.dll" "cfm-artifact\PACKAGES\CFM\Bin"
+          copy /Y "%buildFolderName%\CashFundPhilippineTax.dll" "cfm-artifact\PACKAGES\CFM-Tax\Bin"
+
+      - name: Generate changelog
+        run: |
+          export LC_ALL=C.UTF-8
+          echo "CFM RELEASE NOTES" > changelog.txt
+          echo "=================" >> changelog.txt
+          echo "" >> changelog.txt
+          echo "Release Version: 25R2.${{github.run_number}}" >> changelog.txt
+          echo "Branch: ${{ github.ref_name }}" >> changelog.txt
+          echo "Build Date: $(TZ='Asia/Manila' date '+%Y-%m-%d %H:%M:%S PHT')" >> changelog.txt
+          echo "" >> changelog.txt
+          echo "RECENT CHANGES:" >> changelog.txt
+          echo "---------------" >> changelog.txt
+          echo "" >> changelog.txt
+          git log -n 10 --pretty=format:"Author: %an | Date: %ad%n%n%B%n-----------------------------------------------------------%n" --date=short --grep="Merge" --invert-grep >> changelog.txt
+          echo "" >> changelog.txt
+          echo "End of Release Notes" >> changelog.txt
+          echo "Changelog contents:"
+          cat changelog.txt
+        shell: bash
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: ZIP artifact
+        run: tar -a -c -f ${{env.artifactName}} cfm-artifact
+
+      - name: Create Release
+        id: create_release
+        uses: actions/create-release@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tag_name: Release.25R2.${{github.run_number}}
+          release_name: CFM-2025-R2
+          draft: false
+          prerelease: false
+
+      - name: Upload Release Asset
+        id: upload-release-asset
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: cfm-artifact.zip
+          asset_name: cfm-artifact.zip
+          asset_content_type: application/zip
+
+      - name: Upload Changelog
+        uses: actions/upload-release-asset@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          upload_url: ${{ steps.create_release.outputs.upload_url }}
+          asset_path: changelog.txt
+          asset_name: changelog.txt
+          asset_content_type: text/plain
+
+      - name: Delete Old Release
+        id: delete_old_release
+        uses: dev-drprasad/delete-older-releases@v0.3.4
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          keep_latest: 1
+          delete_tags: true
+
+      - name: Delete workflow runs
+        uses: Mattraks/delete-workflow-runs@v2.0.6
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          repository: ${{ github.repository }}
+          retain_days: 1
+          keep_minimum_runs: 1

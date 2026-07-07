@@ -1,0 +1,3 @@
+﻿<Table TableName="EPApproval">
+    <Column TableName="EPApproval" ColumnName="UsrATPTEFMRFPReqRef" ColumnType="string" AllowNull="True" MaxLength="20" DecimalPrecision="0" DecimalLength="0" IsNewColumn="True" IsUnicode="True" />
+</Table>

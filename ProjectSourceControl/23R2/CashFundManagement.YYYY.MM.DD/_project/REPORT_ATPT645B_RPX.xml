@@ -1,0 +1,221 @@
+﻿<Report Name="atpt645b.rpx">
+    <Report version="20211215" Name="report1">
+        <Filters>
+            <FilterExp>
+                <DataField>EPApproval.RefNoteID</DataField>
+                <Value>@NoteID</Value>
+            </FilterExp>
+        </Filters>
+        <Parameters>
+            <ReportParameter>
+                <Name>NoteID</Name>
+            </ReportParameter>
+            <ReportParameter>
+                <Name>ApprovedBy</Name>
+            </ReportParameter>
+        </Parameters>
+        <SchemaUrl>http://dvo1.infosoft.com.ph:1212/CFM-2023-R2</SchemaUrl>
+        <Tables>
+            <ReportTable Name="EPApproval">
+                <Fields>
+                    <ReportField Name="ApprovalID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproveDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Day">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Month">
+                    </ReportField>
+                    <ReportField Name="ApproveDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ApprovedByID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ApprovedByID_description">
+                    </ReportField>
+                    <ReportField Name="ApprovedByID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="AssignmentMapID">
+                    </ReportField>
+                    <ReportField Name="BAccountID">
+                    </ReportField>
+                    <ReportField Name="BAccountID_BAccount_acctName">
+                    </ReportField>
+                    <ReportField Name="BAccountID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryInfoID">
+                        <DataType>Int64</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryTotalAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Descr">
+                    </ReportField>
+                    <ReportField Name="Details">
+                    </ReportField>
+                    <ReportField Name="DocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate_Day">
+                    </ReportField>
+                    <ReportField Name="DocDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DocDate_Month">
+                    </ReportField>
+                    <ReportField Name="DocDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="DocType">
+                    </ReportField>
+                    <ReportField Name="DocumentOwnerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DocumentOwnerID_description">
+                    </ReportField>
+                    <ReportField Name="DocumentOwnerID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="IsPreApproved">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="NotificationID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="OwnerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="OwnerID_description">
+                    </ReportField>
+                    <ReportField Name="OwnerID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="PendingWaitTime">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Reason">
+                    </ReportField>
+                    <ReportField Name="RefNoteID">
+                    </ReportField>
+                    <ReportField Name="RuleID">
+                    </ReportField>
+                    <ReportField Name="SourceItemType">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="StepID">
+                    </ReportField>
+                    <ReportField Name="TotalAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="WaitTime">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="WorkgroupID">
+                    </ReportField>
+                    <ReportField Name="WorkgroupID_description">
+                    </ReportField>
+                    <ReportField Name="WorkgroupID_EPCompanyTree_description">
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.EP.EPApproval</FullName>
+            </ReportTable>
+        </Tables>
+        <Version>20211215</Version>
+        <Width>5.29101cm</Width>
+        <Sections>
+            <Detail Name="detailSection1">
+                <Height>0px</Height>
+                <Visible>False</Visible>
+            </Detail>
+            <ReportFooter Name="reportFooterSection1">
+                <Height>0.42328cm</Height>
+                <Variables>
+                    <ReportVariable>
+                        <Name>ApprovedBy</Name>
+                        <ValueExpr>=Last([EPApproval.ApprovedByID_description])</ValueExpr>
+                    </ReportVariable>
+                    <ReportVariable>
+                        <Name>ApprovedDate</Name>
+                        <ValueExpr>=Last([EPApproval.ApproveDate])</ValueExpr>
+                    </ReportVariable>
+                </Variables>
+                <Items>
+                    <TextBox Name="textBox21">
+                        <Location>0px, 0px</Location>
+                        <Size>200px, 16px</Size>
+                        <Style>
+                            <BorderStyle>
+                                <Bottom>Solid</Bottom>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=IIF([@ApprovedBy] = null or [@ApprovedBy] = '',Last([EPApproval.ApprovedByID_description]),[@ApprovedBy])</Value>
+                    </TextBox>
+                </Items>
+            </ReportFooter>
+        </Sections>
+    </Report>
+</Report>

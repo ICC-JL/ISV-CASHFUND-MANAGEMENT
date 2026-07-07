@@ -1,0 +1,99 @@
+name: build-devops
+
+on:
+  workflow_call:
+    inputs:
+      projectUrl:
+        description: 'projectUrl'
+        required: true
+        type: string
+      pipelineName:
+        description: 'pipelineName'
+        required: true
+        type: string
+      projectVersion:
+        description: 'Project version (23R2, 24R1, 24R2, 25R1, 25R2)'
+        required: true
+        type: string
+      runOnDevsite:
+        description: 'Run on Devsite'
+        required: false
+        type: boolean
+        default: false
+      runOnStaging:
+        description: 'Run on Staging'
+        required: false
+        type: boolean
+        default: false
+      runOnTestInstance:
+        description: 'Run on Test Instance'
+        required: false
+        type: boolean
+        default: false
+      skipPublish:
+        description: 'Skip Publish'
+        required: false
+        type: boolean
+        default: false
+      autoExport:
+        description: 'Auto Export'
+        required: false
+        type: boolean
+        default: false
+    secrets:
+      personal_access_token:
+        required: true
+      AZURE_DEVOPS_TOKEN:
+        required: true
+
+jobs:
+  build:
+    runs-on: self-hosted
+    steps:
+
+    - name: Display Parameter Values
+      run: |
+        echo "Project URL: ${{ inputs.projectUrl }}"
+        echo "Pipeline Name: ${{ inputs.pipelineName }}"
+        echo "Project Version: ${{ inputs.projectVersion }}"
+        echo "Run on Devsite: ${{ inputs.runOnDevsite }}"
+        echo "Run on Staging: ${{ inputs.runOnStaging }}"
+        echo "Run on Test Instance: ${{ inputs.runOnTestInstance }}"
+        echo "Skip Publish: ${{ inputs.skipPublish }}"
+        echo "Auto Export: ${{ inputs.autoExport }}"
+
+    - name: Run Azure Pipeline
+      shell: powershell
+      env:
+        AZURE_DEVOPS_TOKEN: '${{ secrets.AZURE_DEVOPS_TOKEN }}'
+      run: |
+        $token = [Convert]::ToBase64String([Text.Encoding]::ASCII.GetBytes(":$env:AZURE_DEVOPS_TOKEN"))
+        $headers = @{ Authorization = "Basic $token" }
+
+        # Get pipeline definition ID by name
+        $defUrl = "${{ inputs.projectUrl }}/_apis/build/definitions?name=${{ inputs.pipelineName }}&api-version=7.0"
+        $definitions = Invoke-RestMethod -Uri $defUrl -Headers $headers -Method Get
+        $definitionId = $definitions.value[0].id
+        Write-Host "Found pipeline '${{ inputs.pipelineName }}' with ID: $definitionId"
+
+        # Queue build with template parameters
+        $body = @{
+          definition = @{ id = $definitionId }
+          templateParameters = @{
+            projectVersion    = "${{ inputs.projectVersion }}"
+            runOnDevsite      = "${{ inputs.runOnDevsite }}"
+            runOnStaging      = "${{ inputs.runOnStaging }}"
+            runOnTestInstance  = "${{ inputs.runOnTestInstance }}"
+            skipPublish       = "${{ inputs.skipPublish }}"
+            AutoExport        = "${{ inputs.autoExport }}"
+          }
+        } | ConvertTo-Json -Depth 3
+
+        Write-Host "Request body: $body"
+
+        $buildUrl = "${{ inputs.projectUrl }}/_apis/build/builds?api-version=7.0"
+        $result = Invoke-RestMethod -Uri $buildUrl -Headers $headers -Method Post -Body $body -ContentType "application/json"
+
+        Write-Host "Pipeline triggered successfully!"
+        Write-Host "Build ID: $($result.id)"
+        Write-Host "Build URL: $($result._links.web.href)"

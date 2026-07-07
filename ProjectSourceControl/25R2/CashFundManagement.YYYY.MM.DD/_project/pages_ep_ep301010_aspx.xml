@@ -1,0 +1,13 @@
+﻿<Page path="~/pages/ep/ep301010.aspx" pageSource="pVbfj9o4EH6mUv8HKyfeDliuupdVWB0k0K66bBHQ3X07mWQWXIyd2s4u6cP97TeOE0iA7kU9kJAZ2zPf/Po8fvsvMqNrIHdUrFNcDLzgN49MqTag7MaEcZT90ztKdG8i1S4EQxnv7nKxR4apkeMXEOaRKUiTgWdUCh55oJzF1MAcvqegzcB7plyjPJBxoXk8+3DVx2+X6mTfjbRHbsUGFDN64Flrf5cHPLJkxt74KoxdxDluj7Rv3r97/85HPxzEZZYAeWDKpJTPqNk0AF+oQATXgRQGvSC34cCLcN23WHPRjNMIPkkeg7KbySZceESlgqJXC1AvqAjVtPxkfz17CqmhC5mqCHJNsT4c1e4oItRsZd1Z5oF6ZLGF2r+6aqOj6MI93eHm7Kn7ZfUNIqO741l3vE9AaAg4ZYULU8qE8chMsR1V2QOD14GHcTUFmJYfUM5XNNoGcrejIta5tAS5ONklzugLqsltVFBOXN7mkFiLNiRKckzRkHOPhIC44i/io2LxwFvjL0KSSZoUerGmqIiA16VLqtZgXHB6Dm3vEly/dxJSFPq9SrJuLuSuWL+RvsmF7BFCXGhskdho5rqOf/tnaTyiKvO8MJkN2I8OEzHsrwmm9CS9AU0Mk8Ia5phaXDo9U9itQB0SmMPJPyE805SXUbeGIB7vEi4zwJzcS4O9BBzDXPiQf/wl4BHsvYqMHBy8o5lMzTzlULh4FPxx5uTCUIXWeboTZb3e0RVwXbi1mLowI7gF+4HOP01dSs/tOpelIjbDzAQbpB3QpdZT1y4Eu/C0PHMbeqRmyu+d+F2UT5nCJsVjG//Dzyvn48/73nZArsI1wX8Wyydg6w2e6P95leyb1I5tk0P9FHyAXRkBSwzqG8bfUm0s0blEWFpGtVsm8iw7mrgV31NkaZRnIppJzZw2l4LPAMlR5lh8gjzpijKPvj5YnsPz/Ur9vlRUhKCjgnPu4AVro8o0Niy5tFbnFR7TLjifIbMUpGt7mGKnq+XP5Wslu63WwcDbZdWsjOrFdxv2S1qyxHRu2XcNoetArKdugyA1ytdgA9EWVyWUXHifWkFBqRU0zgvAwlnC3gw5W2MKAixBi9o+CvjP6hvJ/RHbueGKxkoYg7Cmdm4LD/uYie2BpSFmxh1uqt42PY2MDV+jC0uqt40PB1IbOyg0vlBUJUqgeqPd6bx1a5QFUiVS4a2AqqbB73TaJwRXJ7rLtpBJTYrFflOw0vFUo+gd+uyXrtea9lcxBKnKLI7hDkc9s1nSPehLhdUsw6iscXZL3LWSrcwqzUqk0vAh09jQ2RRLDGOLHjRFrQBrJR5l/0fJCGMYbarO4/RTYxTf6nSE8TWxQ/SBMooblfzl5FrMUBX69S3/25cgf8twcrO0+4iPi3z1yFhQHO3ikpmmTFReo8NINswHlBFV5RTiBHWysA+OOp0Ve5XhzWJ0Q/bJ2/sv">
+    <PXGridLevel DataMember="ClaimDetails" ParentId="phG_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrATPTEFMTranType" />
+                    <Prop Key="Width" Value="70" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="TranDesc" OriginalIndex="7" />
+        </Children>
+    </PXGridLevel>
+</Page>

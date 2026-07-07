@@ -1,0 +1,3641 @@
+﻿<Report Name="atpt6370.rpx">
+    <Report version="20211215" Name="report1">
+        <ExcelColumns>
+        </ExcelColumns>
+        <ExcelMode>Manual</ExcelMode>
+        <Filters>
+            <FilterExp>
+                <Condition>GreaterOrEqual</Condition>
+                <DataField>ATPTEFMCashAdvance.Date</DataField>
+                <Value>@StartDate</Value>
+            </FilterExp>
+            <FilterExp>
+                <Condition>LessOrEqual</Condition>
+                <DataField>ATPTEFMCashAdvance.Date</DataField>
+                <Value>@EndDate</Value>
+            </FilterExp>
+            <FilterExp>
+                <DataField>ATPTEFMCashAdvance.Status</DataField>
+                <OpenBraces>1</OpenBraces>
+                <Operator>Or</Operator>
+                <Value>O</Value>
+            </FilterExp>
+            <FilterExp>
+                <DataField>ATPTEFMCashAdvance.Status</DataField>
+                <Operator>Or</Operator>
+                <Value>U</Value>
+            </FilterExp>
+            <FilterExp>
+                <CloseBraces>1</CloseBraces>
+                <DataField>ATPTEFMCashAdvance.Status</DataField>
+                <Value>C</Value>
+            </FilterExp>
+        </Filters>
+        <PageSettings>
+            <Landscape>True</Landscape>
+        </PageSettings>
+        <Parameters>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <DefaultValue>=DateAdd(Report.GetDefExt('RowAccessInfo.BusinessDate'), 'd', -(Day(Report.GetDefExt('RowAccessInfo.BusinessDate')) - 1))</DefaultValue>
+                <Name>StartDate</Name>
+                <Prompt>Start Date</Prompt>
+                <Required>True</Required>
+                <Type>DateTime</Type>
+            </ReportParameter>
+            <ReportParameter>
+                <ColumnSpan>2</ColumnSpan>
+                <DefaultValue>=Report.GetDefExt('RowAccessInfo.BusinessDate')</DefaultValue>
+                <Name>EndDate</Name>
+                <Prompt>End Date</Prompt>
+                <Required>True</Required>
+                <Type>DateTime</Type>
+            </ReportParameter>
+        </Parameters>
+        <Relations>
+            <ReportRelation>
+                <ChildName>Branch</ChildName>
+                <JoinType>Inner</JoinType>
+                <Links>
+                    <RelationRow>
+                        <ChildField>BranchID</ChildField>
+                        <ParentField>BranchID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>ATPTEFMCashAdvance</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>ATPTEFMCARequestDetail</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>CashAdvanceNbr</ChildField>
+                        <ParentField>CashAdvanceNbr</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>ATPTEFMCashAdvance</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>ATPTEFMCAReceiptDetail</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>CashAdvanceRequestDetailID</ChildField>
+                        <ParentField>CashAdvanceRequestDetailID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>ATPTEFMCARequestDetail</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>Organization</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>OrganizationID</ChildField>
+                        <ParentField>OrganizationID</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>Branch</ParentName>
+            </ReportRelation>
+            <ReportRelation>
+                <ChildName>APPayment</ChildName>
+                <Links>
+                    <RelationRow>
+                        <ChildField>RefNbr</ChildField>
+                        <ParentField>PmtRefNbr</ParentField>
+                    </RelationRow>
+                </Links>
+                <ParentName>ATPTEFMCashAdvance</ParentName>
+            </ReportRelation>
+        </Relations>
+        <SchemaUrl>http://10.208.103.201/Staging-CFM-23R2/(W(3))</SchemaUrl>
+        <Tables>
+            <ReportTable Name="Branch">
+                <Fields>
+                    <ReportField Name="AcctMapNbr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="AcctName">
+                    </ReportField>
+                    <ReportField Name="Active">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="BAccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BaseCuryID">
+                    </ReportField>
+                    <ReportField Name="BranchCD">
+                    </ReportField>
+                    <ReportField Name="BranchCD_Segment1">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BranchOrOrganizationLogoNameReport">
+                    </ReportField>
+                    <ReportField Name="CarrierFacility">
+                    </ReportField>
+                    <ReportField Name="CEmail">
+                    </ReportField>
+                    <ReportField Name="CFSFiler">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ContactName">
+                    </ReportField>
+                    <ReportField Name="CountryID">
+                    </ReportField>
+                    <ReportField Name="CountryID_Country_description">
+                    </ReportField>
+                    <ReportField Name="CountryID_description">
+                    </ReportField>
+                    <ReportField Name="CTelNumber">
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID_SMPrinter_printerName">
+                    </ReportField>
+                    <ReportField Name="DunningCompanyBranchID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ForeignEntity">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="GroupMask">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="Included">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsDunningCompanyBranchID">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LedgerCD">
+                    </ReportField>
+                    <ReportField Name="LedgerID">
+                    </ReportField>
+                    <ReportField Name="LedgerID_description">
+                    </ReportField>
+                    <ReportField Name="LedgerID_Ledger_descr">
+                    </ReportField>
+                    <ReportField Name="LogoName">
+                    </ReportField>
+                    <ReportField Name="LogoNameReport">
+                    </ReportField>
+                    <ReportField Name="MainLogoName">
+                    </ReportField>
+                    <ReportField Name="NameControl">
+                    </ReportField>
+                    <ReportField Name="OrganizationID">
+                    </ReportField>
+                    <ReportField Name="OrganizationID_description">
+                    </ReportField>
+                    <ReportField Name="OrganizationID_Organization_organizationName">
+                    </ReportField>
+                    <ReportField Name="OrganizationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="OrganizationLogoNameReport">
+                    </ReportField>
+                    <ReportField Name="OverrideThemeVariables">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ParentBranchID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="PhoneMask">
+                    </ReportField>
+                    <ReportField Name="Reporting1099">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RoleName">
+                    </ReportField>
+                    <ReportField Name="RoleName_description">
+                    </ReportField>
+                    <ReportField Name="RoleName_Roles_descr">
+                    </ReportField>
+                    <ReportField Name="Secured">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="TCC">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.GL.Branch</FullName>
+            </ReportTable>
+            <ReportTable Name="Organization">
+                <Fields>
+                    <ReportField Name="Active">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ActualLedgerCD">
+                    </ReportField>
+                    <ReportField Name="ActualLedgerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BAccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BackgroundColor">
+                    </ReportField>
+                    <ReportField Name="BaseCuryID">
+                    </ReportField>
+                    <ReportField Name="BaseCuryID_CurrencyList_description">
+                    </ReportField>
+                    <ReportField Name="BaseCuryID_description">
+                    </ReportField>
+                    <ReportField Name="CarrierFacility">
+                    </ReportField>
+                    <ReportField Name="CashDiscountBase">
+                    </ReportField>
+                    <ReportField Name="CEmail">
+                    </ReportField>
+                    <ReportField Name="CFSFiler">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ContactName">
+                    </ReportField>
+                    <ReportField Name="CountryID">
+                    </ReportField>
+                    <ReportField Name="CountryID_Country_description">
+                    </ReportField>
+                    <ReportField Name="CountryID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CTelNumber">
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID_description">
+                    </ReportField>
+                    <ReportField Name="DefaultPrinterID_SMPrinter_printerName">
+                    </ReportField>
+                    <ReportField Name="DunningFeeBranchID">
+                    </ReportField>
+                    <ReportField Name="DunningFeeBranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="DunningFeeBranchID_description">
+                    </ReportField>
+                    <ReportField Name="DunningFeeBranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="FileTaxesByBranches">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ForeignEntity">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="GroupMask">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="Included">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LogoName">
+                    </ReportField>
+                    <ReportField Name="LogoNameGetter">
+                    </ReportField>
+                    <ReportField Name="LogoNameReport">
+                    </ReportField>
+                    <ReportField Name="LogoNameReportGetter">
+                    </ReportField>
+                    <ReportField Name="NameControl">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OrganizationCD">
+                    </ReportField>
+                    <ReportField Name="OrganizationCD_Segment1">
+                    </ReportField>
+                    <ReportField Name="OrganizationID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="OrganizationLocalizationCode">
+                    </ReportField>
+                    <ReportField Name="OrganizationName">
+                    </ReportField>
+                    <ReportField Name="OrganizationType">
+                    </ReportField>
+                    <ReportField Name="OverrideThemeVariables">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="PhoneMask">
+                    </ReportField>
+                    <ReportField Name="PrimaryColor">
+                    </ReportField>
+                    <ReportField Name="Reporting1099">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Reporting1099ByBranches">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RoleName">
+                    </ReportField>
+                    <ReportField Name="RoleName_description">
+                    </ReportField>
+                    <ReportField Name="RoleName_Roles_descr">
+                    </ReportField>
+                    <ReportField Name="Secured">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TCC">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.GL.DAC.Organization</FullName>
+            </ReportTable>
+            <ReportTable Name="APPayment">
+                <Fields>
+                    <ReportField Name="AdjCntr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="AdjDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="AdjDate_Day">
+                    </ReportField>
+                    <ReportField Name="AdjDate_Hour">
+                    </ReportField>
+                    <ReportField Name="AdjDate_Month">
+                    </ReportField>
+                    <ReportField Name="AdjDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="AdjFinPeriodID">
+                    </ReportField>
+                    <ReportField Name="AdjTranPeriodID">
+                    </ReportField>
+                    <ReportField Name="AmountToWords">
+                    </ReportField>
+                    <ReportField Name="APAccountID">
+                    </ReportField>
+                    <ReportField Name="APAccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="APAccountID_description">
+                    </ReportField>
+                    <ReportField Name="APAccountID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Approved">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="APSubID">
+                    </ReportField>
+                    <ReportField Name="APSubID_description">
+                    </ReportField>
+                    <ReportField Name="APSubID_Segment1">
+                    </ReportField>
+                    <ReportField Name="APSubID_Segment2">
+                    </ReportField>
+                    <ReportField Name="APSubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="BatchNbr">
+                    </ReportField>
+                    <ReportField Name="BatchPaymentRefNbr">
+                    </ReportField>
+                    <ReportField Name="BillCntr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CanHaveBalance">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="CARefSplitLineNbr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CARefTranAccountID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CARefTranID">
+                        <DataType>Int64</DataType>
+                    </ReportField>
+                    <ReportField Name="CashAccountID">
+                    </ReportField>
+                    <ReportField Name="CashAccountID_CashAccount_descr">
+                    </ReportField>
+                    <ReportField Name="CashAccountID_description">
+                    </ReportField>
+                    <ReportField Name="CashAccountID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CATranID">
+                        <DataType>Int64</DataType>
+                    </ReportField>
+                    <ReportField Name="ChargeAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="ChargeCntr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ClDisplayName">
+                    </ReportField>
+                    <ReportField Name="ClearDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ClearDate_Day">
+                    </ReportField>
+                    <ReportField Name="ClearDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ClearDate_Month">
+                    </ReportField>
+                    <ReportField Name="ClearDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="Cleared">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ClosedDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ClosedDate_Day">
+                    </ReportField>
+                    <ReportField Name="ClosedDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ClosedDate_Month">
+                    </ReportField>
+                    <ReportField Name="ClosedDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ClosedFinPeriodID">
+                    </ReportField>
+                    <ReportField Name="ClosedTranPeriodID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryChargeAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDiscBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDiscountedDocTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDiscountedPrice">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDiscountedTaxableTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDiscTaken">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDiscTot">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryDocDisc">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryID">
+                    </ReportField>
+                    <ReportField Name="CuryInfoID">
+                        <DataType>Int64</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryInitDocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryLineRetainageTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryOrigDiscAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryOrigDocAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryOrigDocAmtWithRetainageTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryOrigTaxDiscAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryOrigWhTaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryPOApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryPOFullApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryPOUnreleasedApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRetainagePaidTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRetainageReleased">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRetainageTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRetainageUnpaidTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRetainageUnreleasedAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRetainedDiscTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRetainedTaxTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRoundDiff">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryTaxRoundDiff">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryTaxWheld">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryUnappliedBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryWhTaxBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DefRetainagePct">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DepositAfter">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DepositAfter_Day">
+                    </ReportField>
+                    <ReportField Name="DepositAfter_Hour">
+                    </ReportField>
+                    <ReportField Name="DepositAfter_Month">
+                    </ReportField>
+                    <ReportField Name="DepositAfter_Quarter">
+                    </ReportField>
+                    <ReportField Name="DepositAsBatch">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="DepositDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="Deposited">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="DepositNbr">
+                    </ReportField>
+                    <ReportField Name="DepositType">
+                    </ReportField>
+                    <ReportField Name="DiscBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscountedDocTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscountedPrice">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscountedTaxableTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscTaken">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DiscTot">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DisplayCuryInitDocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DocClass">
+                    </ReportField>
+                    <ReportField Name="DocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DocDate_Day">
+                    </ReportField>
+                    <ReportField Name="DocDate_Hour">
+                    </ReportField>
+                    <ReportField Name="DocDate_Month">
+                    </ReportField>
+                    <ReportField Name="DocDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="DocDesc">
+                    </ReportField>
+                    <ReportField Name="DocDisc">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="DocType">
+                    </ReportField>
+                    <ReportField Name="DontApprove">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="DrCr">
+                    </ReportField>
+                    <ReportField Name="EmployeeID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="EmployeeID_description">
+                    </ReportField>
+                    <ReportField Name="EmployeeID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="EmployeeWorkgroupID">
+                    </ReportField>
+                    <ReportField Name="EmployeeWorkgroupID_description">
+                    </ReportField>
+                    <ReportField Name="EmployeeWorkgroupID_EPCompanyTree_description">
+                    </ReportField>
+                    <ReportField Name="ExtRefNbr">
+                    </ReportField>
+                    <ReportField Name="FinPeriodID">
+                    </ReportField>
+                    <ReportField Name="HasPPDTaxes">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="HiddenKey">
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ImpRefNbr">
+                    </ReportField>
+                    <ReportField Name="InitDocBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="InternalDocType">
+                    </ReportField>
+                    <ReportField Name="IsMigratedRecord">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsPrintingProcess">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsReleaseCheckProcess">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsRequestPrepayment">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsRetainageDocument">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsRetainageReversing">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsTaxPosted">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsTaxSaved">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsTaxValid">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="JointPayeeID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LineCntr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="LineRetainageTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="NonTaxable">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OpenDoc">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="OrigDiscAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="OrigDocAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="OrigDocAmtWithRetainageTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="OrigDocDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="OrigDocDate_Day">
+                    </ReportField>
+                    <ReportField Name="OrigDocDate_Hour">
+                    </ReportField>
+                    <ReportField Name="OrigDocDate_Month">
+                    </ReportField>
+                    <ReportField Name="OrigDocDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="OrigDocType">
+                    </ReportField>
+                    <ReportField Name="OrigModule">
+                    </ReportField>
+                    <ReportField Name="OrigRefNbr">
+                    </ReportField>
+                    <ReportField Name="OrigTaxDiscAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="OrigWhTaxAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="OwnerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="OwnerID_description">
+                    </ReportField>
+                    <ReportField Name="OwnerID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="Passed">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Payable">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Paying">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="PaymentMethodID">
+                    </ReportField>
+                    <ReportField Name="PaymentsByLinesAllowed">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="PendingPPD">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="POApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="POFullApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="POUnreleasedApplAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="PrebookBatchNbr">
+                    </ReportField>
+                    <ReportField Name="Prebooked">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="PrintCheck">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="PrintDocType">
+                    </ReportField>
+                    <ReportField Name="Printed">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ProjectID">
+                    </ReportField>
+                    <ReportField Name="ProjectID_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_Segment1">
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="RefNoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="Rejected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Released">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ReleasedOrPrebooked">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ReleasedToVerify">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RemitAddressID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RemitContactID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainageAcctID">
+                    </ReportField>
+                    <ReportField Name="RetainageAcctID_Account_description">
+                    </ReportField>
+                    <ReportField Name="RetainageAcctID_description">
+                    </ReportField>
+                    <ReportField Name="RetainageAcctID_Segment1">
+                    </ReportField>
+                    <ReportField Name="RetainageApply">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainagePaidTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainageReleased">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainageSubID">
+                    </ReportField>
+                    <ReportField Name="RetainageSubID_description">
+                    </ReportField>
+                    <ReportField Name="RetainageSubID_Segment1">
+                    </ReportField>
+                    <ReportField Name="RetainageSubID_Segment2">
+                    </ReportField>
+                    <ReportField Name="RetainageSubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="RetainageTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainageUnpaidTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainageUnreleasedAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainedDiscTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RetainedTaxTotal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RGOLAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RoundDiff">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Scheduled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ScheduleID">
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SignAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="SignBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="SortOrder">
+                        <DataType>Int16</DataType>
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="StubCntr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxCalcMode">
+                    </ReportField>
+                    <ReportField Name="TaxCostINAdjRefNbr">
+                    </ReportField>
+                    <ReportField Name="TaxRoundDiff">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TaxWheld">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="TranPeriodID">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="UnappliedBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTAssessmentDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTAssessmentDate_Day">
+                    </ReportField>
+                    <ReportField Name="UsrATPTAssessmentDate_Hour">
+                    </ReportField>
+                    <ReportField Name="UsrATPTAssessmentDate_Month">
+                    </ReportField>
+                    <ReportField Name="UsrATPTAssessmentDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="UsrATPTCharges">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTCountryOrigin">
+                    </ReportField>
+                    <ReportField Name="UsrATPTCountryOrigin_Country_description">
+                    </ReportField>
+                    <ReportField Name="UsrATPTCountryOrigin_description">
+                    </ReportField>
+                    <ReportField Name="UsrATPTCuryCharges">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTCuryDutiable">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTCuryImportDutiableValue">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTCuryImportExempt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTCuryImportLandedCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTCuryOtherCharges">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTCuryVATAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTDocRefNbr">
+                    </ReportField>
+                    <ReportField Name="UsrATPTDutiable">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTECtoAPSelect">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMIsFromCA">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMIsFromReplenishment">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMIsOverbudget">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMIsUnreplenishedReceiptBill">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMLiqNbr">
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMReqType">
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMSourceRef">
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMSourceReqClass">
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMSourceTranType">
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMSourceType">
+                    </ReportField>
+                    <ReportField Name="UsrATPTEFMTranType">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportationDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportationDate_Day">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportationDate_Hour">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportationDate_Month">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportationDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportDutiableValue">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportEntryNo">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportExempt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportLandedCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportORNumber">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportPaymentDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportPaymentDate_Day">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportPaymentDate_Hour">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportPaymentDate_Month">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportPaymentDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportVendorID">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportVendorID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportVendorID_description">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportVendorID_Segment1">
+                    </ReportField>
+                    <ReportField Name="UsrATPTImportVendorID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="UsrATPTLandedCostVendor">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTOtherCharges">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTOutOfBalanceSelect">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTSingleUponPaymentDocument">
+                    </ReportField>
+                    <ReportField Name="UsrATPTVATAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTVATRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="UsrATPTWHTRecog">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorID_BAccountR_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorID_description">
+                    </ReportField>
+                    <ReportField Name="VendorID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VendorID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_description">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Location_descr">
+                    </ReportField>
+                    <ReportField Name="VendorLocationID_Segment1">
+                    </ReportField>
+                    <ReportField Name="VoidAppl">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="VoidBatchNbr">
+                    </ReportField>
+                    <ReportField Name="Voided">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="WhTaxBal">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="WorkgroupID">
+                    </ReportField>
+                </Fields>
+                <FullName>PX.Objects.AP.APPayment</FullName>
+            </ReportTable>
+            <ReportTable Name="ATPTEFMCashAdvance">
+                <Fields>
+                    <ReportField Name="ActualSpentAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="AnyUnprocessedClaim">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AnyUnprocessedEC">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="AnyUnprocessedReceipts">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ApprovalOwnerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ApprovalOwnerID_description">
+                    </ReportField>
+                    <ReportField Name="ApprovalOwnerID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="ApprovalWorkgroupID">
+                    </ReportField>
+                    <ReportField Name="Approved">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ATPTEFMCashAdvanceNbr">
+                    </ReportField>
+                    <ReportField Name="BillBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="BillRefNbr">
+                    </ReportField>
+                    <ReportField Name="BillStatus">
+                    </ReportField>
+                    <ReportField Name="BillType">
+                    </ReportField>
+                    <ReportField Name="BranchID">
+                    </ReportField>
+                    <ReportField Name="BranchID_Branch_acctName">
+                    </ReportField>
+                    <ReportField Name="BranchID_description">
+                    </ReportField>
+                    <ReportField Name="BranchID_Segment1">
+                    </ReportField>
+                    <ReportField Name="BudgetEnabled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="CAPendingforLiquidationAndEmptyReceipts">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="CashAdvanceNbr">
+                    </ReportField>
+                    <ReportField Name="ChangeAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CurrentDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryActualSpentAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryChangeAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryID">
+                    </ReportField>
+                    <ReportField Name="CuryInfoID">
+                        <DataType>Int64</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRate">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryRequestedAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryViewState">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Date">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="Date_Day">
+                    </ReportField>
+                    <ReportField Name="Date_Hour">
+                    </ReportField>
+                    <ReportField Name="Date_Month">
+                    </ReportField>
+                    <ReportField Name="Date_Quarter">
+                    </ReportField>
+                    <ReportField Name="DateOfUse">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="DateOfUse_Day">
+                    </ReportField>
+                    <ReportField Name="DateOfUse_Hour">
+                    </ReportField>
+                    <ReportField Name="DateOfUse_Month">
+                    </ReportField>
+                    <ReportField Name="DateOfUse_Quarter">
+                    </ReportField>
+                    <ReportField Name="DaysExtend">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="DepartmentID">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_description">
+                    </ReportField>
+                    <ReportField Name="DepartmentID_EPDepartment_description">
+                    </ReportField>
+                    <ReportField Name="Descr">
+                    </ReportField>
+                    <ReportField Name="EmployeeName">
+                    </ReportField>
+                    <ReportField Name="ExecuteValidations">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ExtRefNbr">
+                    </ReportField>
+                    <ReportField Name="FinPeriodID">
+                    </ReportField>
+                    <ReportField Name="HasBalance">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="HasInitialBudget">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="HasRefund">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="Hold">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="InvoiceRefNbr">
+                    </ReportField>
+                    <ReportField Name="InvoiceStatus">
+                    </ReportField>
+                    <ReportField Name="IsCancelled">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsImported">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="IsOverbudget">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LiqDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LiqDate_Day">
+                    </ReportField>
+                    <ReportField Name="LiqDate_Hour">
+                    </ReportField>
+                    <ReportField Name="LiqDate_Month">
+                    </ReportField>
+                    <ReportField Name="LiqDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OwnerID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="OwnerID_description">
+                    </ReportField>
+                    <ReportField Name="OwnerID_Owner_displayName">
+                    </ReportField>
+                    <ReportField Name="PmtBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="PmtRefNbr">
+                    </ReportField>
+                    <ReportField Name="PmtStatus">
+                    </ReportField>
+                    <ReportField Name="PmtType">
+                    </ReportField>
+                    <ReportField Name="PositionID">
+                    </ReportField>
+                    <ReportField Name="PositionID_description">
+                    </ReportField>
+                    <ReportField Name="PositionID_EPPosition_positionID">
+                    </ReportField>
+                    <ReportField Name="PpmBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="PpmRefNbr">
+                    </ReportField>
+                    <ReportField Name="PpmStatus">
+                    </ReportField>
+                    <ReportField Name="PpmType">
+                    </ReportField>
+                    <ReportField Name="ReceiptsWithNoERRefNbrs">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="ReceiptsWithNoLiquidationRefNbr">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="Reclassified">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ReclassifiedInvoiceRefNbr">
+                    </ReportField>
+                    <ReportField Name="ReclassifyBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="ReclassifyDate">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="ReclassifyDate_Day">
+                    </ReportField>
+                    <ReportField Name="ReclassifyDate_Hour">
+                    </ReportField>
+                    <ReportField Name="ReclassifyDate_Month">
+                    </ReportField>
+                    <ReportField Name="ReclassifyDate_Quarter">
+                    </ReportField>
+                    <ReportField Name="ReclassifyStatus">
+                    </ReportField>
+                    <ReportField Name="ReclassifyType">
+                    </ReportField>
+                    <ReportField Name="RefundAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Rejected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="ReqClassID">
+                    </ReportField>
+                    <ReportField Name="RequestApproval">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="RequestedAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="RequestedByID">
+                    </ReportField>
+                    <ReportField Name="RequestedByID_CREmployee_acctName">
+                    </ReportField>
+                    <ReportField Name="RequestedByID_description">
+                    </ReportField>
+                    <ReportField Name="RequestedByID_Segment1">
+                    </ReportField>
+                    <ReportField Name="Status">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID_description">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID_TaxZone_descr">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="VendorRefundBalance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="VendorRefundRefNbr">
+                    </ReportField>
+                    <ReportField Name="VendorRefundStatus">
+                    </ReportField>
+                    <ReportField Name="VendorRefundType">
+                    </ReportField>
+                    <ReportField Name="WorkgroupID">
+                    </ReportField>
+                    <ReportField Name="WorkgroupID_description">
+                    </ReportField>
+                    <ReportField Name="WorkgroupID_EPCompanyTree_description">
+                    </ReportField>
+                </Fields>
+                <FullName>CashFundManagement.DAC.ATPTEFMCashAdvance</FullName>
+            </ReportTable>
+            <ReportTable Name="ATPTEFMCAReceiptDetail">
+                <Fields>
+                    <ReportField Name="AccountDescription">
+                    </ReportField>
+                    <ReportField Name="AccountID">
+                    </ReportField>
+                    <ReportField Name="AccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="AccountID_description">
+                    </ReportField>
+                    <ReportField Name="AccountID_Segment1">
+                    </ReportField>
+                    <ReportField Name="AtcCode">
+                    </ReportField>
+                    <ReportField Name="AtcCode_description">
+                    </ReportField>
+                    <ReportField Name="AtcCode_Tax_descr">
+                    </ReportField>
+                    <ReportField Name="CashAdvanceNbr">
+                    </ReportField>
+                    <ReportField Name="CashAdvanceReceiptDetailIID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CashAdvanceRequestDetailID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CostCodeID">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_description">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_PMCostCode_description">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_Segment2">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryNetAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryNetUnitCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Date">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="Date_Day">
+                    </ReportField>
+                    <ReportField Name="Date_Hour">
+                    </ReportField>
+                    <ReportField Name="Date_Month">
+                    </ReportField>
+                    <ReportField Name="Date_Quarter">
+                    </ReportField>
+                    <ReportField Name="ExpenseReceiptRefNbr">
+                    </ReportField>
+                    <ReportField Name="InventoryID">
+                    </ReportField>
+                    <ReportField Name="InventoryID_description">
+                    </ReportField>
+                    <ReportField Name="InventoryID_InventoryItem_descr">
+                    </ReportField>
+                    <ReportField Name="IsImported">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="LiquidationRef">
+                    </ReportField>
+                    <ReportField Name="NetAmt">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="NetQty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="NetUnitCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="OldVendID">
+                    </ReportField>
+                    <ReportField Name="OldVendID_description">
+                    </ReportField>
+                    <ReportField Name="OldVendID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="ProjectID">
+                    </ReportField>
+                    <ReportField Name="ProjectID_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ProjectTaskID">
+                    </ReportField>
+                    <ReportField Name="RefNbr">
+                    </ReportField>
+                    <ReportField Name="Remarks">
+                    </ReportField>
+                    <ReportField Name="Reversed">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SubID">
+                    </ReportField>
+                    <ReportField Name="SubID_description">
+                    </ReportField>
+                    <ReportField Name="SubID_Segment1">
+                    </ReportField>
+                    <ReportField Name="SubID_Segment2">
+                    </ReportField>
+                    <ReportField Name="SubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="TaxCategoryID">
+                    </ReportField>
+                    <ReportField Name="TaxCategoryID_description">
+                    </ReportField>
+                    <ReportField Name="TaxCategoryID_TaxCategory_descr">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID_description">
+                    </ReportField>
+                    <ReportField Name="TaxZoneID_TaxZone_descr">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="VendID">
+                    </ReportField>
+                    <ReportField Name="VendID_description">
+                    </ReportField>
+                    <ReportField Name="VendID_Vendor_acctName">
+                    </ReportField>
+                    <ReportField Name="VendorAddress">
+                    </ReportField>
+                    <ReportField Name="VendorID">
+                    </ReportField>
+                    <ReportField Name="VendorName">
+                    </ReportField>
+                    <ReportField Name="VendorTin">
+                    </ReportField>
+                </Fields>
+                <FullName>CashFundManagement.DAC.ATPTEFMCAReceiptDetail</FullName>
+            </ReportTable>
+            <ReportTable Name="ATPTEFMCARequestDetail">
+                <Fields>
+                    <ReportField Name="AccountDescription">
+                    </ReportField>
+                    <ReportField Name="AccountID">
+                    </ReportField>
+                    <ReportField Name="AccountID_Account_description">
+                    </ReportField>
+                    <ReportField Name="AccountID_description">
+                    </ReportField>
+                    <ReportField Name="AccountID_Segment1">
+                    </ReportField>
+                    <ReportField Name="Amount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Balance">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CashAdvanceNbr">
+                    </ReportField>
+                    <ReportField Name="CashAdvanceRequestDetailID">
+                        <DataType>Int32</DataType>
+                    </ReportField>
+                    <ReportField Name="CostCodeID">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_description">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_PMCostCode_description">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_Segment1">
+                    </ReportField>
+                    <ReportField Name="CostCodeID_Segment2">
+                    </ReportField>
+                    <ReportField Name="CreatedByID">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_displayName">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_Creator_Username">
+                    </ReportField>
+                    <ReportField Name="CreatedByID_description">
+                    </ReportField>
+                    <ReportField Name="CreatedByScreenID">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="CreatedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="CuryAmount">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="CuryUnitCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="InventoryID">
+                    </ReportField>
+                    <ReportField Name="InventoryID_description">
+                    </ReportField>
+                    <ReportField Name="InventoryID_InventoryItem_descr">
+                    </ReportField>
+                    <ReportField Name="IsImported">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_description">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_displayName">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByID_Modifier_Username">
+                    </ReportField>
+                    <ReportField Name="LastModifiedByScreenID">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime">
+                        <DataType>DateTime</DataType>
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Day">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Hour">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Month">
+                    </ReportField>
+                    <ReportField Name="LastModifiedDateTime_Quarter">
+                    </ReportField>
+                    <ReportField Name="NoteActivity">
+                    </ReportField>
+                    <ReportField Name="NoteFiles">
+                    </ReportField>
+                    <ReportField Name="NoteID">
+                        <DataType>Object</DataType>
+                    </ReportField>
+                    <ReportField Name="NoteImages">
+                    </ReportField>
+                    <ReportField Name="NoteText">
+                    </ReportField>
+                    <ReportField Name="ProjectID">
+                    </ReportField>
+                    <ReportField Name="ProjectID_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_PMProject_description">
+                    </ReportField>
+                    <ReportField Name="ProjectID_Segment1">
+                    </ReportField>
+                    <ReportField Name="ProjectTaskID">
+                    </ReportField>
+                    <ReportField Name="Qty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Remarks">
+                    </ReportField>
+                    <ReportField Name="RunningQty">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Selected">
+                        <DataType>Boolean</DataType>
+                    </ReportField>
+                    <ReportField Name="SubID">
+                    </ReportField>
+                    <ReportField Name="SubID_description">
+                    </ReportField>
+                    <ReportField Name="SubID_Segment1">
+                    </ReportField>
+                    <ReportField Name="SubID_Segment2">
+                    </ReportField>
+                    <ReportField Name="SubID_Sub_description">
+                    </ReportField>
+                    <ReportField Name="tstamp">
+                    </ReportField>
+                    <ReportField Name="UnitCost">
+                        <DataType>Decimal</DataType>
+                    </ReportField>
+                    <ReportField Name="Uom">
+                    </ReportField>
+                </Fields>
+                <FullName>CashFundManagement.DAC.ATPTEFMCARequestDetail</FullName>
+            </ReportTable>
+        </Tables>
+        <Version>20201103</Version>
+        <ViewerFields>
+            <ViewerField Name="ATPTEFMCashAdvance.ReqClassID">
+            </ViewerField>
+            <ViewerField Name="ATPTEFMCashAdvance.LiqDate">
+            </ViewerField>
+        </ViewerFields>
+        <Width>42.82138cm</Width>
+        <Sections>
+            <PageHeader Name="pageHeaderSection1">
+                <Height>3.59788cm</Height>
+                <Items>
+                    <PictureBox Name="pictureBox1">
+                        <Excel>
+                            <column>7</column>
+                        </Excel>
+                        <Location>600px, 8px</Location>
+                        <QRCodeSettings>
+                        </QRCodeSettings>
+                        <Size>304px, 0.66667in</Size>
+                        <Source>Database</Source>
+                        <Value>=first([Organization.LogoNameReport])</Value>
+                    </PictureBox>
+                    <TextBox Name="textBox1">
+                        <Excel>
+                            <column>3</column>
+                            <row>2</row>
+                            <width>10</width>
+                        </Excel>
+                        <Location>248px, 73px</Location>
+                        <Size>1008px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>15px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>Cash Advance Monitoring Report</Value>
+                    </TextBox>
+                    <TextBox Name="textBox2">
+                        <Excel>
+                            <column>3</column>
+                            <row>3</row>
+                            <width>10</width>
+                        </Excel>
+                        <Location>248px, 97px</Location>
+                        <Size>1008px, 24px</Size>
+                        <Style>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                        </Style>
+                        <Value>='From ' + MonthName([@StartDate]) + ' ' + Day([@StartDate]) + ', ' + Year([@StartDate]) #010;+ ' - ' + #010; MonthName([@EndDate]) + ' ' + Day([@EndDate]) + ', ' + Year([@EndDate]) </Value>
+                    </TextBox>
+                </Items>
+            </PageHeader>
+            <Detail Name="detailSection1">
+                <Height>0px</Height>
+                <Style>
+                    <BorderColor>
+                        <Bottom>Black</Bottom>
+                        <Left>Black</Left>
+                        <Right>Black</Right>
+                        <Top>Black</Top>
+                    </BorderColor>
+                    <VerticalAlign>Middle</VerticalAlign>
+                </Style>
+                <Visible>False</Visible>
+            </Detail>
+            <PageHeader Name="pageHeaderSection2">
+                <Height>0.84656cm</Height>
+                <Style>
+                    <VerticalAlign>Middle</VerticalAlign>
+                </Style>
+                <Items>
+                    <TextBox Name="textBox10">
+                        <Excel>
+                            <column>12</column>
+                        </Excel>
+                        <Location>1216px, 0px</Location>
+                        <Size>96px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Liquidated Amount</Value>
+                    </TextBox>
+                    <TextBox Name="textBox11">
+                        <Excel>
+                            <column>13</column>
+                        </Excel>
+                        <Location>1312px, 0px</Location>
+                        <Size>96px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Unliquidated Amount</Value>
+                    </TextBox>
+                    <TextBox Name="textBox3">
+                        <Location>8px, 0px</Location>
+                        <Size>96px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Employee ID</Value>
+                    </TextBox>
+                    <TextBox Name="textBox30">
+                        <Excel>
+                            <column>10</column>
+                        </Excel>
+                        <Location>960px, 0px</Location>
+                        <Size>136px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>CA STATUS</Value>
+                    </TextBox>
+                    <TextBox Name="textBox33">
+                        <Excel>
+                            <column>15</column>
+                        </Excel>
+                        <Location>1512px, 0px</Location>
+                        <Size>104px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Check Ref Nbr</Value>
+                    </TextBox>
+                    <TextBox Name="textBox34">
+                        <Excel>
+                            <column>3</column>
+                        </Excel>
+                        <Location>248px, 0px</Location>
+                        <Size>104px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Branch</Value>
+                    </TextBox>
+                    <TextBox Name="textBox39">
+                        <Excel>
+                            <column>8</column>
+                        </Excel>
+                        <Location>712px, 0px</Location>
+                        <Size>152px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Description</Value>
+                    </TextBox>
+                    <TextBox Name="textBox4">
+                        <Excel>
+                            <column>2</column>
+                        </Excel>
+                        <Location>104px, 0px</Location>
+                        <Size>144px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Employee Name</Value>
+                    </TextBox>
+                    <TextBox Name="textBox42">
+                        <Excel>
+                            <column>6</column>
+                        </Excel>
+                        <Location>528px, 0px</Location>
+                        <Size>80px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>13px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Liquidation Date</Value>
+                    </TextBox>
+                    <TextBox Name="textBox45">
+                        <Excel>
+                            <column>14</column>
+                        </Excel>
+                        <Location>1408px, 0px</Location>
+                        <Size>104px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Return Amount</Value>
+                    </TextBox>
+                    <TextBox Name="textBox5">
+                        <Excel>
+                            <column>4</column>
+                        </Excel>
+                        <Location>352px, 0px</Location>
+                        <Size>104px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Department</Value>
+                    </TextBox>
+                    <TextBox Name="textBox6">
+                        <Excel>
+                            <column>5</column>
+                        </Excel>
+                        <Location>456px, 0px</Location>
+                        <Size>72px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>CA Date</Value>
+                    </TextBox>
+                    <TextBox Name="textBox7">
+                        <Excel>
+                            <column>7</column>
+                        </Excel>
+                        <Location>608px, 0px</Location>
+                        <Size>104px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>CA Ref No.</Value>
+                    </TextBox>
+                    <TextBox Name="textBox8">
+                        <Excel>
+                            <column>9</column>
+                        </Excel>
+                        <Location>864px, 0px</Location>
+                        <Size>96px, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>CA Amount</Value>
+                    </TextBox>
+                    <TextBox Name="textBox9">
+                        <Excel>
+                            <column>11</column>
+                        </Excel>
+                        <Location>1096px, 0px</Location>
+                        <Size>1.25in, 34px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>14px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Liquidation No.</Value>
+                    </TextBox>
+                </Items>
+            </PageHeader>
+            <ReportFooter Name="reportFooterSection1">
+                <Height>19px</Height>
+                <Style>
+                    <VerticalAlign>Middle</VerticalAlign>
+                </Style>
+                <Items>
+                    <TextBox Name="textBox21">
+                        <Location>8px, 0px</Location>
+                        <Size>96px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                                <Style>Bold</Style>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>Total</Value>
+                    </TextBox>
+                    <TextBox Name="textBox22">
+                        <Excel>
+                            <column>2</column>
+                        </Excel>
+                        <Location>104px, 0px</Location>
+                        <Size>144px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox23">
+                        <Excel>
+                            <column>4</column>
+                        </Excel>
+                        <Location>352px, 0px</Location>
+                        <Size>104px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox24">
+                        <Excel>
+                            <column>5</column>
+                        </Excel>
+                        <Location>456px, 0px</Location>
+                        <Size>72px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox25">
+                        <Excel>
+                            <column>7</column>
+                        </Excel>
+                        <Location>608px, 0px</Location>
+                        <NavigateUrl>=[ATPTEFMCashAdvance.CashAdvanceNbr]</NavigateUrl>
+                        <Size>104px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox26">
+                        <Excel>
+                            <column>9</column>
+                        </Excel>
+                        <Format>=[ATPTEFMCashAdvance.CuryRequestedAmount.Format]</Format>
+                        <Location>864px, 0px</Location>
+                        <Size>96px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$TotalCuryRequestAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox27">
+                        <Excel>
+                            <column>10</column>
+                        </Excel>
+                        <Location>960px, 0px</Location>
+                        <Size>136px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox28">
+                        <Excel>
+                            <column>12</column>
+                        </Excel>
+                        <Format>=[ATPTEFMCashAdvance.ActualSpentAmount.Format]</Format>
+                        <Location>1216px, 0px</Location>
+                        <Size>96px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$TotalLiquidationAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox29">
+                        <Excel>
+                            <column>13</column>
+                        </Excel>
+                        <Format>=[ATPTEFMCashAdvance.CuryChangeAmount.Format]</Format>
+                        <Location>1312px, 0px</Location>
+                        <Size>96px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$TotalUnliquidatedAmt</Value>
+                    </TextBox>
+                    <TextBox Name="textBox32">
+                        <Excel>
+                            <column>11</column>
+                        </Excel>
+                        <Location>1096px, 0px</Location>
+                        <Size>120px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox37">
+                        <Excel>
+                            <column>15</column>
+                        </Excel>
+                        <Location>1512px, 0px</Location>
+                        <Size>104px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox38">
+                        <Excel>
+                            <column>3</column>
+                        </Excel>
+                        <Location>248px, 0px</Location>
+                        <Size>104px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox41">
+                        <Excel>
+                            <column>8</column>
+                        </Excel>
+                        <Location>712px, 0px</Location>
+                        <NavigateUrl>=[ATPTEFMCashAdvance.CashAdvanceNbr]</NavigateUrl>
+                        <Size>152px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox44">
+                        <Excel>
+                            <column>6</column>
+                        </Excel>
+                        <Location>528px, 0px</Location>
+                        <Size>80px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Center</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                    </TextBox>
+                    <TextBox Name="textBox47">
+                        <Excel>
+                            <column>14</column>
+                        </Excel>
+                        <Format>=[ATPTEFMCashAdvance.RefundAmount.Format]</Format>
+                        <Location>1408px, 0px</Location>
+                        <Size>104px, 19px</Size>
+                        <Style>
+                            <BorderColor>
+                                <Bottom>Black</Bottom>
+                                <Left>Black</Left>
+                                <Right>Black</Right>
+                                <Top>Black</Top>
+                            </BorderColor>
+                            <BorderStyle>
+                                <Bottom>Inset</Bottom>
+                                <Left>Inset</Left>
+                                <Right>Inset</Right>
+                                <Top>Inset</Top>
+                            </BorderStyle>
+                            <BorderWidth>
+                                <Bottom>1px</Bottom>
+                                <Left>1px</Left>
+                                <Right>1px</Right>
+                                <Top>1px</Top>
+                            </BorderWidth>
+                            <Font>
+                                <Name>Arial</Name>
+                                <Size>12px</Size>
+                            </Font>
+                            <Padding>
+                                <Top>2px</Top>
+                            </Padding>
+                            <TextAlign>Right</TextAlign>
+                            <VerticalAlign>Middle</VerticalAlign>
+                        </Style>
+                        <Value>=$TotalRefundAmt</Value>
+                    </TextBox>
+                </Items>
+            </ReportFooter>
+        </Sections>
+        <Items>
+        </Items>
+        <Groups>
+            <Group Name="group1">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[ATPTEFMCashAdvance.CashAdvanceNbr]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <KeepTogether>WholeGroup</KeepTogether>
+                <Headers>
+                    <Header Name="groupHeaderSection1">
+                        <Expanded>False</Expanded>
+                        <Height>0.21164cm</Height>
+                        <Visible>False</Visible>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection1">
+                        <Height>0.42328cm</Height>
+                        <Variables>
+                            <ReportVariable>
+                                <Name>TotalCuryRequestAmt</Name>
+                                <ValueExpr>=Assign($TotalCuryRequestAmt,$TotalCuryRequestAmt + [ATPTEFMCashAdvance.CuryRequestedAmount])</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>TotalLiquidationAmt</Name>
+                                <ValueExpr>=Assign($TotalLiquidationAmt,IIf([ATPTEFMCashAdvance.Status] = 'C', $TotalLiquidationAmt + [ATPTEFMCashAdvance.CuryActualSpentAmount], $TotalLiquidationAmt + 0))</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>TotalUnliquidatedAmt</Name>
+                                <ValueExpr>=Assign($TotalUnliquidatedAmt, IIf([ATPTEFMCashAdvance.Status]= 'U', $TotalUnliquidatedAmt + [ATPTEFMCashAdvance.CuryChangeAmount], $TotalUnliquidatedAmt + 0))</ValueExpr>
+                            </ReportVariable>
+                            <ReportVariable>
+                                <Name>TotalRefundAmt</Name>
+                                <ValueExpr>=Assign($TotalRefundAmt,IIf([ATPTEFMCashAdvance.Status] = 'C', $TotalRefundAmt + [ATPTEFMCashAdvance.RefundAmount], $TotalRefundAmt + 0))</ValueExpr>
+                            </ReportVariable>
+                        </Variables>
+                        <Items>
+                            <TextBox Name="textBox12">
+                                <Location>8px, 0px</Location>
+                                <Size>96px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.RequestedByID]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox13">
+                                <Excel>
+                                    <column>2</column>
+                                </Excel>
+                                <Location>104px, 0px</Location>
+                                <Size>144px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.RequestedByID_description]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox14">
+                                <Excel>
+                                    <column>4</column>
+                                </Excel>
+                                <Location>352px, 0px</Location>
+                                <Size>104px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.DepartmentID]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox15">
+                                <Excel>
+                                    <column>5</column>
+                                </Excel>
+                                <Location>456px, 0px</Location>
+                                <Size>72px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.Date]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox16">
+                                <Excel>
+                                    <column>7</column>
+                                </Excel>
+                                <Location>608px, 0px</Location>
+                                <NavigateMethod>Server</NavigateMethod>
+                                <Size>104px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.CashAdvanceNbr]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox17">
+                                <Excel>
+                                    <column>9</column>
+                                </Excel>
+                                <Location>864px, 0px</Location>
+                                <Size>96px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.CuryRequestedAmount]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox18">
+                                <Excel>
+                                    <column>11</column>
+                                </Excel>
+                                <Location>1096px, 0px</Location>
+                                <NavigateUrl>='Main?ScreenId=EP301000&amp;UsrATPTEFMLiqNbr='+[ATPTEFMCAReceiptDetail.LiquidationRef]</NavigateUrl>
+                                <Size>120px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Target>_blank</Target>
+                                <Value>=[ATPTEFMCAReceiptDetail.LiquidationRef]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox19">
+                                <Excel>
+                                    <column>12</column>
+                                </Excel>
+                                <Location>1216px, 0px</Location>
+                                <Size>96px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=IIf([ATPTEFMCashAdvance.Status] = 'C', [ATPTEFMCashAdvance.CuryActualSpentAmount], 0)</Value>
+                            </TextBox>
+                            <TextBox Name="textBox20">
+                                <Excel>
+                                    <column>13</column>
+                                </Excel>
+                                <Location>1312px, 0px</Location>
+                                <Size>96px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=IIf([ATPTEFMCashAdvance.Status] = 'U', [ATPTEFMCashAdvance.CuryChangeAmount], 0)</Value>
+                            </TextBox>
+                            <TextBox Name="textBox31">
+                                <Excel>
+                                    <column>10</column>
+                                </Excel>
+                                <Location>960px, 0px</Location>
+                                <Size>136px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.Status]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox35">
+                                <Excel>
+                                    <column>3</column>
+                                </Excel>
+                                <Location>248px, 0px</Location>
+                                <Size>104px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.BranchID]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox36">
+                                <Excel>
+                                    <column>15</column>
+                                </Excel>
+                                <Location>1512px, 0px</Location>
+                                <NavigateUrl>='Main?ScreenId=AP302000&amp;RefNbr=' + [ATPTEFMCashAdvance.PmtRefNbr]</NavigateUrl>
+                                <Size>104px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Target>_blank</Target>
+                                <Value>=[ATPTEFMCashAdvance.PmtRefNbr]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox40">
+                                <Excel>
+                                    <column>8</column>
+                                </Excel>
+                                <Location>712px, 0px</Location>
+                                <Size>152px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Left>2px</Left>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Left</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.Descr]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox43">
+                                <Excel>
+                                    <column>6</column>
+                                </Excel>
+                                <Location>528px, 0px</Location>
+                                <Size>80px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Center</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Value>=[ATPTEFMCashAdvance.LiqDate]</Value>
+                            </TextBox>
+                            <TextBox Name="textBox46">
+                                <Excel>
+                                    <column>14</column>
+                                </Excel>
+                                <Location>1408px, 0px</Location>
+                                <Size>104px, 19px</Size>
+                                <Style>
+                                    <BorderColor>
+                                        <Bottom>Black</Bottom>
+                                        <Left>Black</Left>
+                                        <Right>Black</Right>
+                                        <Top>Black</Top>
+                                    </BorderColor>
+                                    <BorderStyle>
+                                        <Bottom>Inset</Bottom>
+                                        <Left>Inset</Left>
+                                        <Right>Inset</Right>
+                                        <Top>Inset</Top>
+                                    </BorderStyle>
+                                    <BorderWidth>
+                                        <Bottom>1px</Bottom>
+                                        <Left>1px</Left>
+                                        <Right>1px</Right>
+                                        <Top>1px</Top>
+                                    </BorderWidth>
+                                    <Font>
+                                        <Name>Arial</Name>
+                                        <Size>12px</Size>
+                                    </Font>
+                                    <Padding>
+                                        <Top>2px</Top>
+                                    </Padding>
+                                    <TextAlign>Right</TextAlign>
+                                    <VerticalAlign>Middle</VerticalAlign>
+                                </Style>
+                                <Target>_blank</Target>
+                                <Value>=[ATPTEFMCashAdvance.RefundAmount]</Value>
+                            </TextBox>
+                        </Items>
+                    </Footer>
+                </Footers>
+            </Group>
+            <Group Name="group2">
+                <Grouping>
+                    <GroupExp>
+                        <DataField>=[ATPTEFMCAReceiptDetail.CashAdvanceReceiptDetailIID]</DataField>
+                    </GroupExp>
+                </Grouping>
+                <Headers>
+                    <Header Name="groupHeaderSection2">
+                        <Height>0px</Height>
+                        <Visible>False</Visible>
+                    </Header>
+                </Headers>
+                <Footers>
+                    <Footer Name="groupFooterSection2">
+                        <Height>0px</Height>
+                    </Footer>
+                </Footers>
+            </Group>
+        </Groups>
+    </Report>
+</Report>

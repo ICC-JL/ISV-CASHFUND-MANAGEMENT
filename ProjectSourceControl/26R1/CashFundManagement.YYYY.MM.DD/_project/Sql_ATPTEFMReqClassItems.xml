@@ -1,0 +1,28 @@
+﻿<Sql TableName="ATPTEFMReqClassItems" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMReqClassItems">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="TranType" type="Char(3)" />
+  <col name="ReqClassID" type="NVarChar(10)" />
+  <col name="InventoryID" type="Int" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <col name="IsImported" type="Bit" nullable="true" />
+  <col name="Amount" type="Decimal(19,4)" nullable="true" />
+  <col name="IsPerDiem" type="Bit" nullable="true" />
+  <col name="ReqClassItemsID" type="Int" identity="true" />
+  <index name="ATPTEFMReqClassItems_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMReqClassItems_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ReqClassItemsID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

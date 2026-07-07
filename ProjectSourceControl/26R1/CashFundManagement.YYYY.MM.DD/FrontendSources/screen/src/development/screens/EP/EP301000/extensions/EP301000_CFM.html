@@ -1,0 +1,25 @@
+<template>
+	<!-- Add custom fields to Slot A - between Status and DocDate -->
+	<field view.bind="ExpenseClaim" name="UsrATPTEFMTranType" before="#formSlotA01 [name='RefNbr']"></field>
+	<field view.bind="ExpenseClaim" name="UsrATPTEFMReqType" after="#formSlotA01 [name='UsrATPTEFMTranType']"></field>
+	<field view.bind="ExpenseClaim" name="UsrATPTEFMReqClass" after="#formSlotA01 [name='UsrATPTEFMReqType']"></field>
+	<field view.bind="ExpenseClaim" name="UsrATPTEFMRFPReqRef" after="#formSlotA01 [name='UsrATPTEFMReqClass']"></field>
+	<field view.bind="ExpenseClaim" name="UsrATPTEFMLiqNbr" after="#formSlotA01 [name='RefNbr']"></field>
+	<field view.bind="ExpenseClaim" name="UsrATPTVendorID" before="#formSlotB01 [name='EmployeeID']"></field>
+	
+	<!-- Add custom fields to Slot C after CuryTaxTotal -->
+	<field view.bind="ExpenseClaim" name="UsrATPTEFMIsOverbudget" after="#formSlotC01 [name='CuryTaxTotal']"></field>
+	<field view.bind="ExpenseClaim" name="UsrATPTEFMHasInitialBudget" after="#formSlotC01 [name='UsrATPTEFMIsOverbudget']"></field>
+	
+	<!-- Grid columns are automatically generated from TypeScript view extensions -->
+	<!-- UsrATPTEFMReqRef and UsrATPTEFMAccountGroup will appear in Details grid automatically -->
+	
+	<!-- Add custom grid to Financial tab after APDocuments grid -->
+	<qp-grid 
+		after="#FinancialTab #gridAPDocuments"
+		id="gridATPTEFMAPPaymentDocument"
+		caption="Link to Check"
+		view.bind="ATPTEFMAPPaymentDocument"
+		class="framed-section">
+	</qp-grid>
+</template>

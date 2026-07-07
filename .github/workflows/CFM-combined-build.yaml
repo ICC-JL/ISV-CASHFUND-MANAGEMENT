@@ -1,0 +1,228 @@
+name: CFM-Combined-Build
+
+on:
+  workflow_dispatch:
+
+env:
+    buildFolder24R1: '..\BUILDS-2024R1'
+    buildFolder24R2: '..\BUILDS-2024R2'
+    buildFolderName24R1: 'BUILDS-2024R1'
+    buildFolderName24R2: 'BUILDS-2024R2'
+    artifactName: 'CFM-Artifact.zip'
+
+jobs:
+ build:
+    runs-on: windows-latest
+    permissions:
+      contents: write
+      pull-requests: write
+      repository-projects: write
+      actions: write
+    steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 2
+    
+    # Create directories for 24R1
+    - name: Create 24R1 directories
+      run: |
+        mkdir -p cfm-artifact/24R1/DLL
+        mkdir -p cfm-artifact/24R1/PACKAGES/CFM
+        mkdir -p cfm-artifact/24R1/PACKAGES/CFM-Tax
+        mkdir -p cfm-artifact/24R1/PAGES
+
+    # Create directories for 24R2
+    - name: Create 24R2 directories
+      run: |
+        mkdir -p cfm-artifact/24R2/DLL
+        mkdir -p cfm-artifact/24R2/PACKAGES/CFM
+        mkdir -p cfm-artifact/24R2/PACKAGES/CFM-Tax
+        mkdir -p cfm-artifact/24R2/PAGES
+
+    - name: Add msbuild to PATH
+      uses: microsoft/setup-msbuild@v2
+
+    # Build and Copy 24R1 Files
+    - name: Stamp build info CFM 24R1
+      shell: pwsh
+      run: .\.github\scripts\Stamp-BuildInfo.ps1 -CsprojPaths CashFundManagement\CashFundManagement-24R1.csproj -AcuVersion 24R1
+
+    - name: Build Project CashFundManagement-24R1.csproj
+      run: msbuild CashFundManagement/CashFundManagement-24R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder24R1}} -p:PostBuildEvent=
+
+    - name: COPY DLLs CFM 24R1
+      run: |
+        copy "${{env.buildFolderName24R1}}/CashFundManagement.dll" cfm-artifact/24R1/DLL
+
+    - name: COPY CFM Packages 24R1
+      run: |
+        XCOPY "ProjectSourceControl\24R1\CashFundManagement.YYYY.MM.DD" "cfm-artifact\24R1\PACKAGES\CFM" /E /D /C /Y
+
+    - name: Stamp build info CFM-Tax 24R1
+      shell: pwsh
+      run: .\.github\scripts\Stamp-BuildInfo.ps1 -CsprojPaths CashFundPhilippineTax\CashFundPhilippineTax-24R1.csproj -AcuVersion 24R1
+
+    - name: Build Project CashFundPhilippineTax-24R1.csproj
+      run: msbuild CashFundPhilippineTax/CashFundPhilippineTax-24R1.csproj -t:rebuild -p:OutputPath=${{env.buildFolder24R1}} -p:PostBuildEvent=
+
+    - name: COPY DLLs CFM-Tax 24R1
+      run: |
+        copy "${{env.buildFolderName24R1}}/CashFundPhilippineTax.dll" cfm-artifact/24R1/DLL
+
+    - name: COPY CFM-Tax Packages 24R1
+      run: |
+        XCOPY "ProjectSourceControl\24R1\CashFundPhilippineTax.YYYY.MM.DD" "cfm-artifact\24R1\PACKAGES\CFM-Tax" /E /D /C /Y
+
+    - name: COPY PAGES CFM 24R1
+      run: |
+        XCOPY "Pages" "cfm-artifact\24R1\PAGES" /E /D /C /Y
+
+    # Build and Copy 24R2 Files
+    - name: Stamp build info CFM 24R2
+      shell: pwsh
+      run: .\.github\scripts\Stamp-BuildInfo.ps1 -CsprojPaths CashFundManagement\CashFundManagement-24R2.csproj -AcuVersion 24R2
+
+    - name: Build Project CashFundManagement-24R2.csproj
+      run: msbuild CashFundManagement/CashFundManagement-24R2.csproj -t:rebuild -p:OutputPath=${{env.buildFolder24R2}} -p:PostBuildEvent=
+
+    - name: COPY DLLs CFM 24R2
+      run: |
+        copy "${{env.buildFolderName24R2}}/CashFundManagement.dll" cfm-artifact/24R2/DLL
+
+    - name: COPY CFM Packages 24R2
+      shell: pwsh
+      run: |
+        $exact = "ProjectSourceControl\24R2\CashFundManagement.YYYY.MM.DD"
+        $src = if (Test-Path $exact) { $exact } else { "ProjectSourceControl\24R1\CashFundManagement.YYYY.MM.DD" }
+        Write-Host "Copying CFM 24R2 package from: $src"
+        XCOPY "$src" "cfm-artifact\24R2\PACKAGES\CFM" /E /D /C /Y
+
+    - name: Stamp build info CFM-Tax 24R2
+      shell: pwsh
+      run: .\.github\scripts\Stamp-BuildInfo.ps1 -CsprojPaths CashFundPhilippineTax\CashFundPhilippineTax-24R2.csproj -AcuVersion 24R2
+
+    - name: Build Project CashFundPhilippineTax-24R2.csproj
+      run: msbuild CashFundPhilippineTax/CashFundPhilippineTax-24R2.csproj -t:rebuild -p:OutputPath=${{env.buildFolder24R2}} -p:PostBuildEvent=
+
+    - name: COPY DLLs CFM-Tax 24R2
+      run: |
+        copy "${{env.buildFolderName24R2}}/CashFundPhilippineTax.dll" cfm-artifact/24R2/DLL
+
+    - name: COPY CFM-Tax Packages 24R2
+      shell: pwsh
+      run: |
+        $exact = "ProjectSourceControl\24R2\CashFundPhilippineTax.YYYY.MM.DD"
+        $src = if (Test-Path $exact) { $exact } else { "ProjectSourceControl\24R1\CashFundPhilippineTax.YYYY.MM.DD" }
+        Write-Host "Copying CFM-Tax 24R2 package from: $src"
+        XCOPY "$src" "cfm-artifact\24R2\PACKAGES\CFM-Tax" /E /D /C /Y
+
+    - name: COPY PAGES CFM 24R2
+      run: |
+        XCOPY "Pages" "cfm-artifact\24R2\PAGES" /E /D /C /Y
+
+    - name: ZIP artifact
+      run: tar -a -c -f ${{env.artifactName}} cfm-artifact
+
+    - name: Create Combined Release
+      id: create_release
+      uses: actions/create-release@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        tag_name: Release.Combined.${{github.run_number}}
+        release_name: Release 24R1 and 24R2 Combined
+        draft: false
+        prerelease: false
+        
+    - name: Upload Release Asset
+      id: upload-release-asset 
+      uses: actions/upload-release-asset@v1
+      env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        upload_url: ${{ steps.create_release.outputs.upload_url }}
+        asset_path: cfm-artifact.zip
+        asset_name: cfm-artifact.zip
+        asset_content_type: application/zip 
+
+    - name: Delete Old Releases
+      shell: pwsh
+      run: |
+        Write-Host "Starting releases cleanup..."
+        
+        Write-Host "Fetching all releases..."
+        $currentReleaseTag = "Release.Combined.${{github.run_number}}"
+        $versionPrefix = "Release.Combined."
+        Write-Host "Current release tag: $currentReleaseTag"
+        Write-Host "Version prefix to clean: $versionPrefix"
+        
+        $releases = gh api repos/${{ github.repository }}/releases --paginate -q '.[] | [.id, .tag_name] | @tsv'
+        
+        if (-not $releases) {
+            Write-Host "No releases found to delete."
+        } else {
+            Write-Host "Found releases. Starting deletion..."
+            
+            $releases | ConvertFrom-Csv -Delimiter "`t" -Header "Id", "TagName" | ForEach-Object {
+                # Only process releases that match our version prefix
+                if ($_.TagName.StartsWith($versionPrefix) -and $_.TagName -ne $currentReleaseTag) {
+                    Write-Host "Deleting release: $($_.TagName) (ID: $($_.Id))"
+                    try {
+                        gh api repos/${{ github.repository }}/releases/$($_.Id) -X DELETE
+                        Write-Host "Successfully deleted release: $($_.TagName)"
+                        
+                        # Also delete the associated tag
+                        try {
+                            gh api repos/${{ github.repository }}/git/refs/tags/$($_.TagName) -X DELETE
+                            Write-Host "Successfully deleted tag: $($_.TagName)"
+                        } catch {
+                            Write-Host "Warning: Failed to delete tag: $($_.TagName)"
+                        }
+                    } catch {
+                        Write-Host "Failed to delete release: $($_.TagName)"
+                    }
+                } else {
+                    Write-Host "Skipping release: $($_.TagName) (either different version or current release)"
+                }
+            }
+            Write-Host "Release cleanup completed. Only the current Combined release has been preserved."
+        }
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Delete workflow runs
+      shell: pwsh
+      run: |
+        Write-Host "Starting workflow runs cleanup..."
+        
+        Write-Host "Fetching all workflow runs..."
+        $currentRunId = $env:GITHUB_RUN_ID
+        $workflowName = "CFM-Combined-Build"
+        Write-Host "Current running workflow ID: $currentRunId"
+        Write-Host "Workflow name to clean: $workflowName"
+        
+        # Get workflow runs for this specific workflow
+        $workflowRuns = gh api repos/${{ github.repository }}/actions/runs --paginate -q '.workflow_runs[] | select((.name == "CFM-Combined-Build")) | .id'
+        
+        if (-not $workflowRuns) {
+            Write-Host "No workflow runs found to delete."
+        } else {
+            Write-Host "Found workflow runs. Starting deletion..."
+            
+            $workflowRuns | ForEach-Object {
+                if ($_ -ne $currentRunId) {
+                    Write-Host "Deleting workflow run ID: $_"
+                    try {
+                        gh api repos/${{ github.repository }}/actions/runs/$_ -X DELETE
+                        Write-Host "Successfully deleted workflow run: $_"
+                    } catch {
+                        Write-Host "Failed to delete workflow run: $_"
+                    }
+                } else {
+                    Write-Host "Skipping current workflow run: $_"
+                }
+            }
+            Write-Host "Workflow cleanup completed. Only the current Combined Build run is preserved."
+        }
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}

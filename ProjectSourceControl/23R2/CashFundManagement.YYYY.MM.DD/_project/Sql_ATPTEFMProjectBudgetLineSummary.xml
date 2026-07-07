@@ -1,0 +1,48 @@
+﻿<Sql TableName="ATPTEFMProjectBudgetLineSummary" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMProjectBudgetLineSummary">
+  <col name="RLProjectBudgetLineSummaryID" type="Int" identity="true" />
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="FinYear" type="NVarChar(4)" nullable="true" />
+  <col name="LedgerID" type="Int" nullable="true" />
+  <col name="ProjectID" type="Int" nullable="true" />
+  <col name="ProjectTaskID" type="Int" />
+  <col name="CostCodeID" type="Int" />
+  <col name="Amount" type="Decimal(19,4)" />
+  <col name="DistributedAmount" type="Decimal(19,4)" />
+  <col name="FinPeriod01" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod02" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod03" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod04" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod05" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod06" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod07" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod08" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod09" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod10" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod11" type="Decimal(19,4)" nullable="true" />
+  <col name="FinPeriod12" type="Decimal(19,4)" nullable="true" />
+  <col name="Released" type="Bit" default="Zero" />
+  <col name="WasReleased" type="Bit" default="Zero" />
+  <col name="BudgetDistributionMethod" type="Char(1)" nullable="true" />
+  <col name="ReleasedAmount" type="Decimal(19,4)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByScreenID" type="Char(8)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedByScreenID" type="Char(8)" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
+  <col name="AccountGroupID" type="Int" />
+  <col name="InventoryID" type="Int" nullable="true"/>
+  <col name="Deleted" type="Bit" nullable="true" />
+  <index name="ATPTEFMProjectBudgetLineSummary_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMProjectBudgetLineSummary_pk" clustered="true" primary="true" unique="true">
+    <col name="RLProjectBudgetLineSummaryID" />
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

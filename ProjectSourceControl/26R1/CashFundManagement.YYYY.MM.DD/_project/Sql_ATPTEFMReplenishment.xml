@@ -1,0 +1,45 @@
+﻿<Sql TableName="ATPTEFMReplenishment" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMReplenishment">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="ReplenishmentNbr" type="NVarChar(15)" />
+  <col name="FundID" type="NVarChar(15)" />
+  <col name="Status" type="Char(1)" />
+  <col name="Hold" type="Bit" />
+  <col name="Date" type="DateTime" />
+  <col name="Descr" type="NVarChar(255)" nullable="true" />
+  <col name="CustodianID" type="Int" />
+  <col name="PayeeID" type="Int" />
+  <col name="DepartmentID" type="NVarChar(10)" />
+  <col name="Step" type="Char(1)" nullable="true" />
+  <col name="InvoiceRefNbr" type="NVarChar(15)" nullable="true" />
+  <col name="Approved" type="Bit" nullable="true" />
+  <col name="WorkGroupID" type="Int" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="Rejected" type="Bit" nullable="true" />
+  <col name="BranchID" type="Int" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="OwnerID" type="Int" nullable="true" />
+  <col name="FundType" type="Char(1)" nullable="true" />
+  <col name="ClaimAmount" type="Decimal(19,6)" nullable="true" />
+  <col name="WithholdingTaxAmount" type="Decimal(19,6)" nullable="true" />
+  <col name="VatAmount" type="Decimal(19,6)" nullable="true" />
+  <col name="OverrideTax" type="Bit" nullable="true" />
+  <col name="IsImported" type="Bit" nullable="true" />
+  <col name="TaxZone" type="NVarChar(10)" nullable="true" />
+  <col name="IsReleased" type="Bit" nullable="true" />
+  <index name="ATPTEFMReplenishment_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMReplenishment_pk" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+    <col name="ReplenishmentNbr" />
+  </index>
+</table>]]></CDATA>
+</Sql>

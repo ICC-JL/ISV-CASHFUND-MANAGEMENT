@@ -1,0 +1,69 @@
+﻿<Sql TableName="ATPTEFMFeatures" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFMFeatures">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="BudgetModules" type="NVarChar(30)" nullable="true" />
+  <col name="BudgetFeatureSet" type="NVarChar(100)" nullable="true" />
+  <col name="BudgetDocumentAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetRequestAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetBudgetAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetSpentAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetApprovedAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetUnapprovedAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetReturnAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetPOAmount" type="NVarChar(3)" nullable="true" />
+  <col name="BudgetDocumentAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="BudgetRequestAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="BudgetBudgetAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="BudgetSpentAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="BudgetApprovedAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="BudgetUnapprovedAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="BudgetReturnAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="BudgetPOAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetModules" type="NVarChar(30)" nullable="true" />
+  <col name="ProjectBudgetFeatureSet" type="NVarChar(100)" nullable="true" />
+  <col name="ProjectBudgetDocumentAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetRequestAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetBudgetAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetSpentAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetApprovedAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetUnapprovedAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetReturnAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetPOAmount" type="NVarChar(3)" nullable="true" />
+  <col name="ProjectBudgetDocumentAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetRequestAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetBudgetAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetSpentAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetApprovedAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetUnapprovedAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetReturnAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="ProjectBudgetPOAmountLabel" type="NVarChar(50)" nullable="true" />
+  <col name="TransferAssetCustodian" type="NVarChar(2)" nullable="true" />
+  <col name="TransferAssetBuilding" type="NVarChar(2)" nullable="true" />
+  <col name="TransferAssetFloor" type="NVarChar(2)" nullable="true" />
+  <col name="TransferAssetRoom" type="NVarChar(2)" nullable="true" />
+  <col name="CreatedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="CreatedByScreenID" type="Char(8)" nullable="true" />
+  <col name="CreatedDateTime" type="DateTime" nullable="true" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" nullable="true" />
+  <col name="LastModifiedByScreenID" type="Char(8)" nullable="true" />
+  <col name="LastModifiedDateTime" type="DateTime" nullable="true" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="LimitValidation" type="Bit" nullable="true" />
+  <col name="LimitValidationAmt" type="Decimal(19,4)" nullable="true" />
+  <col name="NoteID" type="UniqueIdentifier" nullable="true" />
+  <col name="BudgetValidation" type="Int" nullable="true" />
+  <col name="BudgetCalculation" type="Char(1)" nullable="true" />
+  <col name="BudgetLedgerID" type="Int" nullable="true" />
+  <col name="ProjectBudgetValidation" type="Int" nullable="true" />
+  <col name="ProjectBudgetCalculation" type="Char(1)" nullable="true" />
+  <col name="ProjectBudgetLedgerID" type="Int" nullable="true" />
+  <col name="CashAdvanceOverride" type="Bit" nullable="true" />
+  <index name="ATPTEFMFeatures_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFMFeatures_pk" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

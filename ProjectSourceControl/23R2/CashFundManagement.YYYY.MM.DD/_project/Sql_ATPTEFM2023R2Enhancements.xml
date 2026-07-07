@@ -1,0 +1,20 @@
+﻿<Sql TableName="ATPTEFM2023R2Enhancements" TableSchemaXml="#CDATA">
+    <CDATA name="TableSchemaXml"><![CDATA[<table name="ATPTEFM2023R2Enhancements">
+  <col name="CompanyID" type="Int" default="Zero" />
+  <col name="CreatedByID" type="UniqueIdentifier" />
+  <col name="CreatedByScreenID" type="Char(8)" />
+  <col name="CreatedDateTime" type="DateTime" />
+  <col name="LastModifiedByID" type="UniqueIdentifier" />
+  <col name="LastModifiedByScreenID" type="Char(8)" />
+  <col name="LastModifiedDateTime" type="DateTime" />
+  <col name="tstamp" type="Timestamp" />
+  <col name="NoteID" type="UniqueIdentifier" />
+  <index name="ATPTEFM2023R2Enhancements_NoteID" unique="true">
+    <col name="NoteID" />
+    <col name="CompanyID" />
+  </index>
+  <index name="ATPTEFM2023R2Enhancements_PK" clustered="true" primary="true" unique="true">
+    <col name="CompanyID" />
+  </index>
+</table>]]></CDATA>
+</Sql>

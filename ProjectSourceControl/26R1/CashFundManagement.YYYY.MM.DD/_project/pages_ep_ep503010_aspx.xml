@@ -1,0 +1,13 @@
+﻿<Page path="~/pages/ep/ep503010.aspx" pageSource="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">
+    <PXGridLevel DataMember="Records" ParentId="phL_grid_Levels#0" TypeFullName="PX.Web.UI.PXGridLevel">
+        <Children Key="Columns">
+            <AddItem>
+                <PXGridColumn TypeFullName="PX.Web.UI.PXGridColumn">
+                    <Prop Key="DataField" Value="UsrATPTEFMRFPReqRef" />
+                    <Prop Key="Width" Value="140" />
+                </PXGridColumn>
+            </AddItem>
+            <PXGridColumn DataField="DocumentOwnerID" OriginalIndex="4" />
+        </Children>
+    </PXGridLevel>
+</Page>
