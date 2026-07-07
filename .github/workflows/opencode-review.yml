@@ -1,0 +1,48 @@
+name: OpenCode PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened, ready_for_review]
+
+jobs:
+  opencode-review:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      issues: write
+      id-token: write
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+
+      - name: Run OpenCode PR Review
+        uses: anomalyco/opencode/github@latest
+        env:
+          KIMI_API_KEY: ${{ secrets.KIMI_API_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          model: kimi-for-coding/k2p6
+          agent: acumatica-orchestrator
+          use_github_token: true
+          prompt: |
+            You are reviewing a Pull Request for the ATPTEFM CashFundManagement Acumatica ISV solution.
+
+            Perform an Acumatica-focused code review using the following guidelines:
+            - .github/instructions/PR-Review-Guidelines.md
+
+            Focus areas:
+            1. Naming conventions: all classes must start with ATPTEFM prefix; DACs, Graphs, Extensions, and Attributes must follow the project patterns.
+            2. DAC standards: bound DACs must inherit from ATPTEFMAudit; define PK and FK classes; all fields must have abstract BQL classes with correct strongly-typed BQL bases.
+            3. BQL standards: use Fluent BQL only; use FK.SameAsCurrent / FK.FromCurrent for relationships; no manual field comparisons where FK classes exist.
+            4. Graph standards: views use [PXViewName(ATPTEFMMessages.ViewName)]; event handlers use protected virtual void _(Events.EventType<DAC> e) with null checks; actions use [PXButton] and [PXUIField] and return IEnumerable.
+            5. Localization: no hardcoded UI strings; all display names, errors, and warnings must come from ATPTEFMMessages.
+            6. SQL and ProjectSourceControl synchronization: new or modified bound DAC fields require SQL scripts under ..\..\SCRIPTS\ and updates to the corresponding Sql_<DACName>.xml files in ProjectSourceControl/ for the relevant Acumatica versions.
+            7. Certification issues: check for PX1097, PX1068, PX1066, PX1065, and PX1060 violations.
+            8. Error handling, performance, file organization, workflow patterns, and ASPX validation as applicable.
+
+            Provide a structured review summary with Critical Issues, Major Issues, Minor Suggestions, and an Overall Assessment (Approve / Request Changes / Needs Discussion).
+            Post review comments directly on the pull request.
